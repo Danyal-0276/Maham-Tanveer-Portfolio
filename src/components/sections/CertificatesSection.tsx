@@ -60,8 +60,8 @@ export function CertificatesSection() {
                     </div>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="overflow-hidden">
-                  <DialogTitle className="pr-8">{cert.title}</DialogTitle>
+                <DialogContent>
+                  <DialogTitle>{cert.title}</DialogTitle>
                   <p className="text-sm text-ink/70">
                     {cert.issuer} · {cert.date}
                   </p>

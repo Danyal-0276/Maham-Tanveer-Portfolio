@@ -155,8 +155,9 @@ export const experience = [
     location: "Lahore",
     role: "Full-Time Teaching Position",
     dates: "Nov 2023 to Apr 2024",
-    image: "/media/aesthetic/atmosphere-1.jpg",
-    imageFit: "cover" as const,
+    image: "/media/experience/allied-school.png",
+    imageFit: "contain" as const,
+    imageBg: "light" as const,
     responsibilities: [
       "Applied differentiated strategies for diverse learning styles",
       "Integrated technology and creative resources to deepen understanding",
@@ -171,6 +172,7 @@ export const experience = [
     dates: "Aug 2023 to Oct 2023",
     image: "/media/experience/voice-news.png",
     imageFit: "contain" as const,
+    imageBg: "dark" as const,
     responsibilities: [
       "Researched 30+ news stories and social issues for editorial use",
       "Collaborated with a 10-member production team on scripts and source verification",
@@ -213,6 +215,7 @@ export const experience = [
     dates: "Jan 2026 to Present",
     image: "/media/experience/jasmins-canapes.png",
     imageFit: "contain" as const,
+    imageBg: "dark" as const,
     responsibilities: [
       "Delivers welcoming customer service in a fast-paced retail setting",
       "Supports front-of-house flow, till operations, and visual merchandising",

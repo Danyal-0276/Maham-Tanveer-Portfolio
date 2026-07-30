@@ -32,7 +32,11 @@ export function ExperienceSection() {
                   <div
                     className={cn(
                       "relative aspect-[5/4] overflow-hidden",
-                      job.imageFit === "contain" ? "bg-navy" : "bg-cream-deep"
+                      job.imageFit === "contain"
+                        ? job.imageBg === "dark"
+                          ? "bg-navy"
+                          : "bg-cream"
+                        : "bg-cream-deep"
                     )}
                   >
                     <Image

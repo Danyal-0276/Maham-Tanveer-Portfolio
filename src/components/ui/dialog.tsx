@@ -17,7 +17,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-navy/70 backdrop-blur-md data-[state=open]:animate-in data-[state=closed]:animate-out",
+      "fixed inset-0 z-[60] bg-navy/80 backdrop-blur-md",
       className
     )}
     {...props}
@@ -25,28 +25,59 @@ const DialogOverlay = React.forwardRef<
 ));
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
+function useLockScroll() {
+  React.useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const previousHtmlOverflow = html.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+    const previousPadding = body.style.paddingRight;
+    const scrollbar = window.innerWidth - html.clientWidth;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    if (scrollbar > 0) {
+      body.style.paddingRight = `${scrollbar}px`;
+    }
+
+    return () => {
+      html.style.overflow = previousHtmlOverflow;
+      body.style.overflow = previousBodyOverflow;
+      body.style.paddingRight = previousPadding;
+    };
+  }, []);
+}
+
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <DialogPortal>
-    <DialogOverlay />
-    <DialogPrimitive.Content
-      ref={ref}
-      className={cn(
-        "fixed left-1/2 top-1/2 z-50 grid w-[min(92vw,56rem)] -translate-x-1/2 -translate-y-1/2 gap-4 border border-white/20 bg-cream/90 p-4 shadow-2xl backdrop-blur-xl duration-200 sm:p-6",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <DialogPrimitive.Close className="absolute right-3 top-3 rounded-full bg-navy/80 p-1.5 text-cream transition hover:bg-navy">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
-  </DialogPortal>
-));
+>(({ className, children, ...props }, ref) => {
+  useLockScroll();
+
+  return (
+    <DialogPortal>
+      <DialogOverlay />
+      <DialogPrimitive.Content
+        ref={ref}
+        className={cn(
+          "fixed left-1/2 top-1/2 z-[70] grid max-h-[90vh] w-[min(92vw,56rem)] -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto border border-navy/10 bg-cream p-4 pt-14 shadow-2xl sm:p-6 sm:pt-14",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <DialogPrimitive.Close
+          type="button"
+          aria-label="Close"
+          className="absolute right-3 top-3 z-[80] inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 bg-navy text-cream shadow-md transition hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        >
+          <X className="h-5 w-5" strokeWidth={2.5} />
+          <span className="sr-only">Close</span>
+        </DialogPrimitive.Close>
+      </DialogPrimitive.Content>
+    </DialogPortal>
+  );
+});
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 
 function DialogTitle({
@@ -55,7 +86,7 @@ function DialogTitle({
 }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>) {
   return (
     <DialogPrimitive.Title
-      className={cn("font-serif text-2xl text-navy", className)}
+      className={cn("font-serif text-2xl text-navy pr-10", className)}
       {...props}
     />
   );

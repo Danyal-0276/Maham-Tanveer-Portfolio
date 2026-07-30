@@ -1,19 +1,16 @@
 "use client";
 
-import { ReactLenis } from "lenis/react";
 import type { ReactNode } from "react";
+import { useEffect } from "react";
 
+/** Keeps native scrolling reliable; clears any leftover modal lock styles. */
 export function SmoothScroll({ children }: { children: ReactNode }) {
-  return (
-    <ReactLenis
-      root
-      options={{
-        lerp: 0.08,
-        smoothWheel: true,
-        syncTouch: false,
-      }}
-    >
-      {children}
-    </ReactLenis>
-  );
+  useEffect(() => {
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
+    document.body.style.pointerEvents = "";
+  }, []);
+
+  return <>{children}</>;
 }
