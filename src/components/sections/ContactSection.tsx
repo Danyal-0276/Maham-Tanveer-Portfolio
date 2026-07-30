@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FormEvent, useState } from "react";
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/biography";
@@ -148,7 +148,10 @@ export function ContactSection() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 hover:text-gold"
             >
-              <Linkedin className="h-4 w-4" /> {profile.linkedinLabel}
+              <span className="inline-flex h-4 w-4 items-center justify-center text-[0.65rem] font-bold tracking-tight">
+                in
+              </span>
+              {profile.linkedinLabel}
             </a>
             <p className="inline-flex items-center gap-2">
               <MapPin className="h-4 w-4" /> {profile.location}

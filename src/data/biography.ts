@@ -271,7 +271,7 @@ export const certificates = [
     title: "LUMS — Digital Journalism",
     issuer: "Lahore University of Management Sciences",
     date: "Jul – Aug 2023",
-    image: "/media/certificates/linguistics-conference.jpg",
+    image: "/media/certificates/certificate-extra-01.jpg",
     note: "Course certification in digital journalism practice",
   },
   {

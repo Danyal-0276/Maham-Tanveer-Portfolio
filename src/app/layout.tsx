@@ -21,6 +21,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mahamtanveer.vercel.app"),
   title: `${profile.name} — Educator · Researcher · Project Management`,
   description: profile.shortBio,
   openGraph: {
