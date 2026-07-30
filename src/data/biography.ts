@@ -20,7 +20,6 @@ export const profile = {
 export const navChapters = [
   { id: "welcome", label: "Welcome" },
   { id: "who-i-am", label: "Who I Am" },
-  { id: "journey", label: "Journey" },
   { id: "education", label: "Education" },
   { id: "experience", label: "Experience" },
   { id: "leadership", label: "Leadership" },
@@ -32,72 +31,6 @@ export const navChapters = [
   { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
 ] as const;
-
-export const timeline = [
-  {
-    year: "2017",
-    title: "Fine Arts foundations",
-    detail:
-      "Began Intermediate in Fine Arts at Punjab Group of Colleges, Lahore, building creative discipline and visual literacy.",
-    image: "/media/campus/ucp/ucp-2.jpg",
-  },
-  {
-    year: "2020",
-    title: "University begins",
-    detail:
-      "Started Bachelor of Science in English Language and Literature at the University of Central Punjab.",
-    image: "/media/campus/ucp/ucp-1.jpg",
-  },
-  {
-    year: "2020",
-    title: "Community volunteer",
-    detail:
-      "Volunteered with Shaukat Khanum Memorial Cancer Hospital on awareness campaigns, fundraising, and outreach.",
-    image: "/media/experience/shaukat-khanum-2.png",
-  },
-  {
-    year: "2022",
-    title: "Teaching internship",
-    detail:
-      "Teacher’s Assistant at Nash-o-Numa Montessori and School. Delivered English lessons and supported school administration.",
-    image: "/media/experience/nash-o-numa.png",
-  },
-  {
-    year: "2023",
-    title: "Journalism & research",
-    detail:
-      "Production Research Intern at Voice News, researching stories, verifying sources, and supporting live broadcast scripts.",
-    image: "/media/experience/voice-news.png",
-  },
-  {
-    year: "2023",
-    title: "Paws and Claws",
-    detail:
-      "Co-founded and served as Vice President of the Paws and Claws Animal Welfare Society at UCP.",
-    image: "/media/campus/ucp/ucp-3.jpg",
-  },
-  {
-    year: "2023-24",
-    title: "Classroom leadership",
-    detail:
-      "Full-time teaching at Allied School, then Permanent Literacy Instructor at Cornerstone School and College.",
-    image: "/media/experience/cornerstone.png",
-  },
-  {
-    year: "2024",
-    title: "Graduation",
-    detail:
-      "Completed BS English Language and Literature at the University of Central Punjab.",
-    image: "/media/hero/graduation.jpg",
-  },
-  {
-    year: "2026",
-    title: "Master’s begins",
-    detail:
-      "Began MSc Project Management at the University of Sunderland (January intake, 15-month pathway).",
-    image: "/media/campus/sunderland/sunderland-1.jpg",
-  },
-];
 
 export const education = [
   {
@@ -188,6 +121,22 @@ export const experience = [
       "Tracked local and international media trends under newsroom deadlines",
     ],
     skills: ["Research", "Writing", "Newsroom collaboration"],
+  },
+  {
+    org: "Paws and Claws Animal Welfare Society",
+    location: "University of Central Punjab",
+    role: "Co-Founder & Vice President",
+    dates: "Aug 2023 to Sep 2024",
+    image: "/media/experience/paws-and-claws.png",
+    imageFit: "contain" as const,
+    imageBg: "light" as const,
+    responsibilities: [
+      "Co-founded a student-led welfare club focused on animal rights and care",
+      "Partnered with local shelters for awareness drives and rescue initiatives",
+      "Organized fundraising, adoption campaigns, and workshops engaging 200+ students and staff",
+      "Delegated responsibilities and oversaw effective execution of club initiatives",
+    ],
+    skills: ["Student leadership", "Campaign strategy", "Community outreach"],
   },
   {
     org: "Third Culture Coffee House",
@@ -354,6 +303,21 @@ export const gallery = [
     alt: "Graduation celebration",
   },
   {
+    src: "/media/gallery/graduation-friends-four.png",
+    caption: "Graduates together, Institute of Central Punjab memories.",
+    alt: "Illustrated graduation portrait with friends",
+  },
+  {
+    src: "/media/gallery/graduation-friends-three.png",
+    caption: "Friendship and achievement on graduation day.",
+    alt: "Illustrated graduation portrait of three friends",
+  },
+  {
+    src: "/media/gallery/graduation-portrait-illustration.png",
+    caption: "A soft portrait of the day the chapter turned.",
+    alt: "Illustrated solo graduation portrait",
+  },
+  {
     src: "/media/portrait/lecture-hall.jpg",
     caption: "Listening, learning, and growing in academic spaces.",
     alt: "Maham in a lecture hall",
@@ -394,6 +358,16 @@ export const gallery = [
     alt: "Voice News logo",
   },
   {
+    src: "/media/experience/paws-and-claws.png",
+    caption: "Vice President, Paws and Claws Animal Welfare Society.",
+    alt: "Maham Tanveer as Vice President of Paws and Claws",
+  },
+  {
+    src: "/media/gallery/husky-illustration.png",
+    caption: "A joyful reminder of the animals behind the cause.",
+    alt: "Illustrated smiling husky",
+  },
+  {
     src: "/media/experience/allied-school.png",
     caption: "Full-time teaching at Allied School, Johar Town.",
     alt: "Allied School crest",
@@ -422,11 +396,6 @@ export const gallery = [
     src: "/media/campus/sunderland/sunderland-3.jpg",
     caption: "MSc Project Management in progress.",
     alt: "University of Sunderland campus view",
-  },
-  {
-    src: "/media/portrait/portrait-04.jpg",
-    caption: "Moments that shaped confidence and presence.",
-    alt: "Professional portrait",
   },
   {
     src: "/media/portrait/portrait-05.jpg",

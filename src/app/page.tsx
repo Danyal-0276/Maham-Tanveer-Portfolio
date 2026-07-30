@@ -4,7 +4,6 @@ import { EducationSection } from "@/components/sections/EducationSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { JourneySection } from "@/components/sections/JourneySection";
 import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { MastersSection } from "@/components/sections/MastersSection";
 import { PlacesSection } from "@/components/sections/PlacesSection";
@@ -17,7 +16,6 @@ export default function Home() {
     <>
       <HeroSection />
       <WhoIAmSection />
-      <JourneySection />
       <EducationSection />
       <ExperienceSection />
       <LeadershipSection />

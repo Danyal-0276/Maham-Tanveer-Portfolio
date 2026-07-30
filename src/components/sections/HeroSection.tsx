@@ -37,7 +37,7 @@ export function HeroSection() {
           </p>
           <div className="mt-10">
             <Button asChild size="lg" variant="default">
-              <a href="#journey">Explore My Journey</a>
+              <a href="#education">Explore My Story</a>
             </Button>
           </div>
         </motion.div>

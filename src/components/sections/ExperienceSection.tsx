@@ -31,12 +31,12 @@ export function ExperienceSection() {
                 >
                   <div
                     className={cn(
-                      "relative aspect-[5/4] overflow-hidden",
-                      job.imageFit === "contain"
-                        ? job.imageBg === "dark"
-                          ? "bg-navy"
-                          : "bg-cream"
-                        : "bg-cream-deep"
+                      "relative overflow-hidden",
+                      job.imageFit === "contain" && job.imageBg === "light"
+                        ? "aspect-[3/4] bg-cream"
+                        : job.imageFit === "contain"
+                          ? "aspect-[5/4] bg-navy"
+                          : "aspect-[5/4] bg-cream-deep"
                     )}
                   >
                     <Image
@@ -47,7 +47,9 @@ export function ExperienceSection() {
                       className={cn(
                         "transition duration-700 hover:scale-[1.03]",
                         job.imageFit === "contain"
-                          ? "object-contain p-8"
+                          ? job.imageBg === "light"
+                            ? "object-contain p-3"
+                            : "object-contain p-8"
                           : "object-cover"
                       )}
                     />
