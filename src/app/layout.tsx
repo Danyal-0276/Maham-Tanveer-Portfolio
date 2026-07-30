@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { CustomCursor } from "@/components/layout/CustomCursor";
 import { LoadingReveal } from "@/components/layout/LoadingReveal";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteNav } from "@/components/layout/SiteNav";
@@ -45,6 +46,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-cream text-ink" suppressHydrationWarning>
         <SmoothScroll>
+          <CustomCursor />
           <LoadingReveal />
           <main className="flex-1">{children}</main>
           <SiteFooter />

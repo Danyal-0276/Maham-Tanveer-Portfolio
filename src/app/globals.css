@@ -35,6 +35,21 @@ body {
   font-family: var(--font-manrope), system-ui, sans-serif;
 }
 
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+@keyframes butterfly-flutter {
+  0%,
+  100% {
+    transform: scaleX(1) translateY(0);
+  }
+  50% {
+    transform: scaleX(0.86) translateY(-1px);
+  }
+}
+
 ::selection {
   background: var(--gold-soft);
   color: var(--navy);
