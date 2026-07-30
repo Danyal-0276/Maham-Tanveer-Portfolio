@@ -82,6 +82,14 @@ body {
   }
 }
 
+.hero-reveal {
+  --x: 50;
+  --y: 42;
+  --size: 0;
+  clip-path: circle(calc(var(--size) * 1%) at calc(var(--x) * 1%) calc(var(--y) * 1%));
+  will-change: clip-path;
+}
+
 .hero-glow {
   background: radial-gradient(
       ellipse 60% 50% at 70% 40%,

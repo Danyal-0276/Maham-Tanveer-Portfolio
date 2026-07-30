@@ -46,9 +46,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-cream text-ink" suppressHydrationWarning>
         <SmoothScroll>
           <LoadingReveal />
-          <SiteNav />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <SiteNav />
         </SmoothScroll>
       </body>
     </html>

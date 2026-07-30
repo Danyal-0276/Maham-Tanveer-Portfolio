@@ -23,11 +23,7 @@ export function HeroSection() {
       if (prefersReducedMotion()) return;
 
       const reveal = revealRef.current;
-      gsap.set(reveal, {
-        "--x": "50%",
-        "--y": "42%",
-        "--size": "0%",
-      });
+      gsap.set(reveal, { "--x": 50, "--y": 42, "--size": 0 });
 
       const xTo = gsap.quickTo(reveal, "--x", {
         duration: 0.55,
@@ -44,15 +40,13 @@ export function HeroSection() {
 
       const onMove = (e: MouseEvent) => {
         const rect = sectionRef.current!.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        xTo(`${x}%`);
-        yTo(`${y}%`);
-        sizeTo("22%");
+        xTo(((e.clientX - rect.left) / rect.width) * 100);
+        yTo(((e.clientY - rect.top) / rect.height) * 100);
+        sizeTo(22);
       };
 
-      const onEnter = () => sizeTo("22%");
-      const onLeave = () => sizeTo("0%");
+      const onEnter = () => sizeTo(22);
+      const onLeave = () => sizeTo(0);
 
       const el = sectionRef.current;
       el.addEventListener("mousemove", onMove);
@@ -75,21 +69,21 @@ export function HeroSection() {
       className="relative min-h-[100svh] overflow-hidden bg-[#1a100c] text-cream"
     >
       {/* Base portrait (no cap) */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/media/hero/butterfly-portrait.png"
           alt="Maham Tanveer with butterfly light across her face"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_18%]"
+          className="object-cover object-[center_18%] scale-[0.95]"
         />
       </div>
 
       {/* Reveal portrait (graduation cap) — cursor spotlight */}
       <div
         ref={revealRef}
-        className="hero-reveal absolute inset-0 z-[1]"
+        className="hero-reveal absolute inset-0 z-[1] overflow-hidden"
         aria-hidden
       >
         <Image
@@ -98,7 +92,7 @@ export function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_18%]"
+          className="object-cover object-[center_18%] scale-[0.95]"
         />
       </div>
 

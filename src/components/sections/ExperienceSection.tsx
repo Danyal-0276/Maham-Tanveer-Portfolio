@@ -225,7 +225,29 @@ export function ExperienceSection() {
           ))}
         </div>
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 px-4 py-24 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-12">
+        <div className="absolute left-4 right-4 top-6 z-10 mx-auto flex max-w-7xl items-center gap-4 sm:left-6 sm:right-6 sm:top-8">
+          <div className="flex gap-1.5">
+            {experience.map((_, i) => (
+              <span
+                key={i}
+                data-exp-tick
+                className="h-8 w-1 origin-top rounded-full bg-gold/25"
+              />
+            ))}
+          </div>
+          <div className="h-px flex-1 overflow-hidden bg-cream/15">
+            <div
+              ref={progressRef}
+              className="h-full origin-left bg-gold"
+              style={{ transform: "scaleX(0)" }}
+            />
+          </div>
+          <p className="hidden text-[0.65rem] uppercase tracking-[0.18em] text-cream/50 sm:block">
+            Scroll the theatre
+          </p>
+        </div>
+
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 px-4 pb-24 pt-28 sm:px-6 sm:pt-32 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-12">
           <div className="relative h-[7rem] sm:h-[9.5rem]">
             {experience.map((_, i) => (
               <p
@@ -281,28 +303,6 @@ export function ExperienceSection() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="absolute bottom-8 left-4 right-4 z-10 mx-auto flex max-w-7xl items-center gap-4 sm:left-6 sm:right-6">
-          <div className="flex gap-1.5">
-            {experience.map((_, i) => (
-              <span
-                key={i}
-                data-exp-tick
-                className="h-8 w-1 origin-bottom rounded-full bg-gold/25"
-              />
-            ))}
-          </div>
-          <div className="h-px flex-1 overflow-hidden bg-cream/15">
-            <div
-              ref={progressRef}
-              className="h-full origin-left bg-gold"
-              style={{ transform: "scaleX(0)" }}
-            />
-          </div>
-          <p className="hidden text-[0.65rem] uppercase tracking-[0.18em] text-cream/50 sm:block">
-            Scroll the theatre
-          </p>
         </div>
       </div>
     </section>
