@@ -55,13 +55,13 @@ export function ContactSection() {
     <section id="contact" className="section-pad bg-navy text-cream">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
         <FadeIn>
-          <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:aspect-auto lg:min-h-[32rem]">
+          <div className="relative aspect-[4/5] overflow-hidden bg-navy sm:aspect-[5/4] lg:aspect-auto lg:min-h-[32rem]">
             <Image
               src="/media/portrait/graduation-02.jpg"
               alt="Maham Tanveer"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-[center_15%] scale-[0.92]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
           </div>

@@ -7,13 +7,13 @@ export function WhoIAmSection() {
     <section id="who-i-am" className="section-pad bg-cream-deep/40">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
         <FadeIn>
-          <div className="relative aspect-[4/5] overflow-hidden">
+          <div className="relative aspect-[4/5] overflow-hidden bg-cream-deep">
             <Image
               src="/media/portrait/lecture-hall.jpg"
               alt="Maham in an academic setting"
               fill
               sizes="(max-width: 1024px) 90vw, 45vw"
-              className="object-cover"
+              className="object-cover object-center scale-[0.9]"
             />
           </div>
         </FadeIn>
