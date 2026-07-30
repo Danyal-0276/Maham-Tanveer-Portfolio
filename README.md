@@ -11,7 +11,7 @@
 [![GSAP](https://img.shields.io/badge/GSAP-3-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://gsap.com/)
 [![License](https://img.shields.io/badge/License-Private-6B7280?style=for-the-badge)](#)
 
-[Live Demo](https://mahamtanveer.vercel.app) · [Contact](mailto:mahamt024@gmail.com) · [LinkedIn](https://www.linkedin.com/in/mahamtanveer24)
+[Live Demo](https://maham-tanveer-portfolio.vercel.app) · [Contact](mailto:mahamt024@gmail.com) · [LinkedIn](https://www.linkedin.com/in/mahamtanveer24)
 
 </div>
 
@@ -156,7 +156,7 @@ Built for [Vercel](https://vercel.com/):
 npm run build
 ```
 
-Live site: [mahamtanveer.vercel.app](https://mahamtanveer.vercel.app)
+Live site: [maham-tanveer-portfolio.vercel.app](https://maham-tanveer-portfolio.vercel.app)
 
 ---
 
