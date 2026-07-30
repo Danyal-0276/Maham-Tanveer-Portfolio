@@ -39,54 +39,63 @@ export const timeline = [
     title: "Fine Arts foundations",
     detail:
       "Began Intermediate in Fine Arts at Punjab Group of Colleges, Lahore, building creative discipline and visual literacy.",
+    image: "/media/campus/ucp/ucp-2.jpg",
   },
   {
     year: "2020",
     title: "University begins",
     detail:
       "Started Bachelor of Science in English Language and Literature at the University of Central Punjab.",
+    image: "/media/campus/ucp/ucp-1.jpg",
   },
   {
     year: "2020",
     title: "Community volunteer",
     detail:
       "Volunteered with Shaukat Khanum Memorial Cancer Hospital on awareness campaigns, fundraising, and outreach.",
+    image: "/media/experience/shaukat-khanum-2.png",
   },
   {
     year: "2022",
     title: "Teaching internship",
     detail:
       "Teacher’s Assistant at Nash-o-Numa Montessori and School. Delivered English lessons and supported school administration.",
+    image: "/media/experience/nash-o-numa.png",
   },
   {
     year: "2023",
     title: "Journalism & research",
     detail:
       "Production Research Intern at Voice News, researching stories, verifying sources, and supporting live broadcast scripts.",
+    image: "/media/experience/voice-news.png",
   },
   {
     year: "2023",
     title: "Paws and Claws",
     detail:
       "Co-founded and served as Vice President of the Paws and Claws Animal Welfare Society at UCP.",
+    image: "/media/campus/ucp/ucp-3.jpg",
   },
   {
     year: "2023-24",
     title: "Classroom leadership",
     detail:
       "Full-time teaching at Allied School, then Permanent Literacy Instructor at Cornerstone School and College.",
+    image: "/media/experience/cornerstone.png",
   },
   {
     year: "2024",
     title: "Graduation",
     detail:
       "Completed BS English Language and Literature at the University of Central Punjab.",
+    image: "/media/hero/graduation.jpg",
   },
   {
     year: "2026",
     title: "Master’s begins",
     detail:
       "Began MSc Project Management at the University of Sunderland (January intake, 15-month pathway).",
+    image: "/media/campus/sunderland/sunderland-1.jpg",
   },
 ];
 
@@ -355,9 +364,49 @@ export const gallery = [
     alt: "UCP campus",
   },
   {
+    src: "/media/campus/ucp/ucp-2.jpg",
+    caption: "Fine arts foundations and early study in Lahore.",
+    alt: "Lahore campus atmosphere",
+  },
+  {
     src: "/media/campus/ucp/ucp-3.jpg",
-    caption: "Campus life in Lahore.",
+    caption: "Campus life and student leadership at UCP.",
     alt: "UCP campus grounds",
+  },
+  {
+    src: "/media/experience/shaukat-khanum-2.png",
+    caption: "Volunteering at Shaukat Khanum Memorial Cancer Hospital.",
+    alt: "Shaukat Khanum Memorial Cancer Hospital",
+  },
+  {
+    src: "/media/experience/shaukat-khanum-1.png",
+    caption: "Service and community outreach in Lahore.",
+    alt: "Shaukat Khanum hospital signage",
+  },
+  {
+    src: "/media/experience/nash-o-numa.png",
+    caption: "Teaching internship at Nash-o-Numa Montessori and School.",
+    alt: "Nash-o-Numa Montessori School",
+  },
+  {
+    src: "/media/experience/voice-news.png",
+    caption: "Production research internship at Voice News.",
+    alt: "Voice News logo",
+  },
+  {
+    src: "/media/experience/allied-school.png",
+    caption: "Full-time teaching at Allied School, Johar Town.",
+    alt: "Allied School crest",
+  },
+  {
+    src: "/media/experience/cornerstone.png",
+    caption: "Literacy instruction at Cornerstone School and College.",
+    alt: "Cornerstone School building",
+  },
+  {
+    src: "/media/experience/jasmins-canapes.png",
+    caption: "Life and work in Newcastle at Jasmin’s Canapes.",
+    alt: "Jasmin's Canapes logo",
   },
   {
     src: "/media/campus/sunderland/sunderland-1.jpg",
@@ -368,6 +417,11 @@ export const gallery = [
     src: "/media/campus/sunderland/sunderland-2.jpg",
     caption: "Sir Tom Cowie Campus at St Peter’s.",
     alt: "Sunderland campus building",
+  },
+  {
+    src: "/media/campus/sunderland/sunderland-3.jpg",
+    caption: "MSc Project Management in progress.",
+    alt: "University of Sunderland campus view",
   },
   {
     src: "/media/portrait/portrait-04.jpg",

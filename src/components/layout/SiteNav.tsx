@@ -23,6 +23,7 @@ export function SiteNav() {
             height={56}
             className="h-12 w-12 object-contain sm:h-14 sm:w-14"
             priority
+            unoptimized
           />
           <span className="hidden font-serif text-xl text-navy sm:block">
             {profile.name}

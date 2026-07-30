@@ -41,8 +41,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink">
+      <body className="min-h-full flex flex-col bg-cream text-ink" suppressHydrationWarning>
         <SmoothScroll>
           <LoadingReveal />
           <SiteNav />

@@ -39,6 +39,7 @@ export function LoadingReveal() {
               height={140}
               className="h-28 w-28 object-contain sm:h-32 sm:w-32"
               priority
+              unoptimized
             />
             <p className="font-serif text-3xl tracking-wide text-cream sm:text-4xl">
               {profile.name}

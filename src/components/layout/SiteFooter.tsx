@@ -13,6 +13,7 @@ export function SiteFooter() {
             width={56}
             height={56}
             className="h-14 w-14 object-contain"
+            unoptimized
           />
           <div>
             <p className="font-serif text-2xl">{profile.name}</p>
