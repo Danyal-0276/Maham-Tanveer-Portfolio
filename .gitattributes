@@ -1,0 +1,3 @@
+# Keep docs as UTF-8 text so GitHub can render README.md
+*.md text eol=lf
+README.md text eol=lf
