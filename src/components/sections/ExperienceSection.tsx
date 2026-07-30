@@ -29,13 +29,23 @@ export function ExperienceSection() {
                     reverse && "lg:[&>*:first-child]:order-2"
                   )}
                 >
-                  <div className="relative aspect-[5/4] overflow-hidden">
+                  <div
+                    className={cn(
+                      "relative aspect-[5/4] overflow-hidden",
+                      job.imageFit === "contain" ? "bg-navy" : "bg-cream-deep"
+                    )}
+                  >
                     <Image
                       src={job.image}
                       alt={job.org}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover transition duration-700 hover:scale-[1.03]"
+                      className={cn(
+                        "transition duration-700 hover:scale-[1.03]",
+                        job.imageFit === "contain"
+                          ? "object-contain p-8"
+                          : "object-cover"
+                      )}
                     />
                   </div>
                   <div>

@@ -19,9 +19,9 @@ export function SiteNav() {
           <Image
             src="/brand/mt-logo.png"
             alt="Maham Tanveer monogram"
-            width={44}
-            height={44}
-            className="h-11 w-11 rounded-full object-cover ring-1 ring-gold/50"
+            width={56}
+            height={56}
+            className="h-12 w-12 object-contain sm:h-14 sm:w-14"
             priority
           />
           <span className="hidden font-serif text-xl text-navy sm:block">

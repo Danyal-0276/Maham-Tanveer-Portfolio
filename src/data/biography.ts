@@ -140,7 +140,8 @@ export const experience = [
     location: "Lahore",
     role: "Permanent Literacy Instructor",
     dates: "Aug 2024 to Sep 2025",
-    image: "/media/portrait/lecture-hall.jpg",
+    image: "/media/experience/cornerstone.png",
+    imageFit: "cover" as const,
     responsibilities: [
       "Planned and delivered engaging English lessons for elementary students",
       "Designed lesson plans, assessments, and progress reports",
@@ -155,6 +156,7 @@ export const experience = [
     role: "Full-Time Teaching Position",
     dates: "Nov 2023 to Apr 2024",
     image: "/media/aesthetic/atmosphere-1.jpg",
+    imageFit: "cover" as const,
     responsibilities: [
       "Applied differentiated strategies for diverse learning styles",
       "Integrated technology and creative resources to deepen understanding",
@@ -167,7 +169,8 @@ export const experience = [
     location: "Pakistan",
     role: "Production Research Intern",
     dates: "Aug 2023 to Oct 2023",
-    image: "/media/aesthetic/atmosphere-2.jpg",
+    image: "/media/experience/voice-news.png",
+    imageFit: "contain" as const,
     responsibilities: [
       "Researched 30+ news stories and social issues for editorial use",
       "Collaborated with a 10-member production team on scripts and source verification",
@@ -181,6 +184,7 @@ export const experience = [
     role: "Sales & Floor Supervisor",
     dates: "Mar 2023 to Aug 2023",
     image: "/media/aesthetic/atmosphere-3.jpg",
+    imageFit: "cover" as const,
     responsibilities: [
       "Supervised front-of-house operations during peak hours",
       "Trained and onboarded three new team members",
@@ -193,7 +197,8 @@ export const experience = [
     location: "Lahore",
     role: "Internship: Teacher’s Assistant",
     dates: "Jun 2022 to Oct 2022",
-    image: "/media/portrait/portrait-02.jpg",
+    image: "/media/experience/nash-o-numa.png",
+    imageFit: "cover" as const,
     responsibilities: [
       "Delivered 10+ English lessons to Grade 1 and Grade 2 students",
       "Shadowed school coordination for scheduling and parent communication",
@@ -206,7 +211,8 @@ export const experience = [
     location: "Newcastle upon Tyne",
     role: "Deli Assistant (Front of House)",
     dates: "Jan 2026 to Present",
-    image: "/media/portrait/portrait-03.jpg",
+    image: "/media/experience/jasmins-canapes.png",
+    imageFit: "contain" as const,
     responsibilities: [
       "Delivers welcoming customer service in a fast-paced retail setting",
       "Supports front-of-house flow, till operations, and visual merchandising",
@@ -219,7 +225,8 @@ export const experience = [
     location: "Lahore",
     role: "Volunteer",
     dates: "Jun 2020 to Aug 2020",
-    image: "/media/aesthetic/atmosphere-4.jpg",
+    image: "/media/experience/shaukat-khanum-2.png",
+    imageFit: "cover" as const,
     responsibilities: [
       "Led four awareness campaigns on healthcare and cancer prevention",
       "Assisted fundraising to support patient treatment",

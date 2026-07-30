@@ -35,9 +35,9 @@ export function LoadingReveal() {
             <Image
               src="/brand/mt-logo.png"
               alt="MT monogram"
-              width={120}
-              height={120}
-              className="h-24 w-24 rounded-full object-cover ring-1 ring-gold/40"
+              width={140}
+              height={140}
+              className="h-28 w-28 object-contain sm:h-32 sm:w-32"
               priority
             />
             <p className="font-serif text-3xl tracking-wide text-cream sm:text-4xl">

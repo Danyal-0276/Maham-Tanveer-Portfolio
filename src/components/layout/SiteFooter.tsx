@@ -10,9 +10,9 @@ export function SiteFooter() {
           <Image
             src="/brand/mt-logo.png"
             alt=""
-            width={48}
-            height={48}
-            className="h-12 w-12 rounded-full object-cover"
+            width={56}
+            height={56}
+            className="h-14 w-14 object-contain"
           />
           <div>
             <p className="font-serif text-2xl">{profile.name}</p>
