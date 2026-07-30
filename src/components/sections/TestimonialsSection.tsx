@@ -11,7 +11,7 @@ export function TestimonialsSection() {
             Voices to come
           </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Placeholder frames for a principal, professor, and supervisor—
+            Placeholder frames for a principal, professor, and supervisor,
             awaiting authentic quotes.
           </p>
         </FadeIn>

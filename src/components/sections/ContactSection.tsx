@@ -73,7 +73,7 @@ export function ContactSection() {
             Let&apos;s continue the conversation
           </h2>
           <p className="mt-4 text-cream/70">
-            For teaching, collaboration, or professional opportunities—reach out
+            For teaching, collaboration, or professional opportunities. Reach out
             directly or send a note below.
           </p>
 
@@ -120,7 +120,7 @@ export function ContactSection() {
               {status === "sending" ? "Sending…" : "Send message"}
             </Button>
             {status === "sent" && (
-              <p className="text-sm text-gold">Thank you—your message is on its way.</p>
+              <p className="text-sm text-gold">Thank you. Your message is on its way.</p>
             )}
             {status === "error" && (
               <p className="text-sm text-red-300">

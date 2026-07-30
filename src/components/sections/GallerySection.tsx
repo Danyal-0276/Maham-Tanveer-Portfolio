@@ -20,7 +20,7 @@ export function GallerySection() {
             Moments that linger
           </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Graduation, campus, and the atmosphere of a life in motion—each
+            Graduation, campus, and the atmosphere of a life in motion. Each
             image a quiet caption in the biography.
           </p>
         </FadeIn>

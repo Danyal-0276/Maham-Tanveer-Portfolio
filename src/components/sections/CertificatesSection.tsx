@@ -25,7 +25,7 @@ export function CertificatesSection() {
             Recognition & credentials
           </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Hover to preview, click for a fullscreen glass lightbox—certificates
+            Hover to preview, click for a fullscreen glass lightbox. Certificates
             as lived milestones, not attachments.
           </p>
         </FadeIn>

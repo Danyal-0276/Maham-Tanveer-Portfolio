@@ -13,7 +13,7 @@ export function ExperienceSection() {
             Roles that shaped practice
           </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Teaching, journalism research, service, and UK workplace experience—
+            Teaching, journalism research, service, and UK workplace experience, 
             told as chapters rather than a résumé dump.
           </p>
         </FadeIn>

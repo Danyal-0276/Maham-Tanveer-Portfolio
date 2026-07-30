@@ -17,7 +17,7 @@ export function PlacesSection() {
             Where the story unfolded
           </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            From Lahore to the North East of England—click a pin to reveal each
+            From Lahore to the North East of England. Click a pin to reveal each
             chapter of place.
           </p>
         </FadeIn>

@@ -14,7 +14,7 @@ export function SkillsSection() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink/75">
             Capabilities shaped by classrooms, newsrooms, campaigns, and
-            postgraduate project study—presented as living tags, not meters.
+            postgraduate project study, presented as living tags, not meters.
           </p>
         </FadeIn>
 

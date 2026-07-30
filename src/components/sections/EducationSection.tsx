@@ -12,7 +12,7 @@ export function EducationSection() {
             University records
           </h2>
           <p className="mt-4 max-w-2xl text-cream/70">
-            Formal study across Lahore and Sunderland—each chapter deepening
+            Formal study across Lahore and Sunderland. Each chapter deepening
             craft, curiosity, and professional readiness.
           </p>
         </FadeIn>

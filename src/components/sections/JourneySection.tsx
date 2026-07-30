@@ -13,7 +13,7 @@ export function JourneySection() {
             Milestones along the path
           </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Scroll through the chapters that shaped her—from fine arts and
+            Scroll through the chapters that shaped her, from fine arts and
             literature to teaching, welfare leadership, and a Master’s abroad.
           </p>
         </FadeIn>

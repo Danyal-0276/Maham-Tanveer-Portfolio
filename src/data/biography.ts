@@ -13,7 +13,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/mahamtanveer24",
   linkedinLabel: "linkedin.com/in/mahamtanveer24",
   address: "87 Castleside Road, Newcastle upon Tyne, NE15 7DR",
-  bio: `Maham Tanveer is an educator, researcher, and emerging project leader whose path weaves English literature, literacy instruction, journalism, and community leadership. From the lecture halls of Lahore to postgraduate study in the North East of England, her story is one of purposeful growth—rooted in language, service, and the craft of bringing people and ideas together.`,
+  bio: `Maham Tanveer is an educator, researcher, and emerging project leader whose path weaves English literature, literacy instruction, journalism, and community leadership. From the lecture halls of Lahore to postgraduate study in the North East of England, her story is one of purposeful growth, rooted in language, service, and the craft of bringing people and ideas together.`,
   shortBio: `A literature graduate turned literacy instructor and student leader, now advancing her craft through an MSc in Project Management at the University of Sunderland.`,
 };
 
@@ -38,7 +38,7 @@ export const timeline = [
     year: "2017",
     title: "Fine Arts foundations",
     detail:
-      "Began Intermediate in Fine Arts at Punjab Group of Colleges, Lahore—building creative discipline and visual literacy.",
+      "Began Intermediate in Fine Arts at Punjab Group of Colleges, Lahore, building creative discipline and visual literacy.",
   },
   {
     year: "2020",
@@ -50,19 +50,19 @@ export const timeline = [
     year: "2020",
     title: "Community volunteer",
     detail:
-      "Volunteered with Shaukat Khanum Memorial Cancer Hospital—awareness campaigns, fundraising, and outreach.",
+      "Volunteered with Shaukat Khanum Memorial Cancer Hospital on awareness campaigns, fundraising, and outreach.",
   },
   {
     year: "2022",
     title: "Teaching internship",
     detail:
-      "Teacher’s Assistant at Nash-o-Numa Montessori and School—delivered English lessons and supported school administration.",
+      "Teacher’s Assistant at Nash-o-Numa Montessori and School. Delivered English lessons and supported school administration.",
   },
   {
     year: "2023",
     title: "Journalism & research",
     detail:
-      "Production Research Intern at Voice News—researching stories, verifying sources, and supporting live broadcast scripts.",
+      "Production Research Intern at Voice News, researching stories, verifying sources, and supporting live broadcast scripts.",
   },
   {
     year: "2023",
@@ -71,7 +71,7 @@ export const timeline = [
       "Co-founded and served as Vice President of the Paws and Claws Animal Welfare Society at UCP.",
   },
   {
-    year: "2023–24",
+    year: "2023-24",
     title: "Classroom leadership",
     detail:
       "Full-time teaching at Allied School, then Permanent Literacy Instructor at Cornerstone School and College.",
@@ -96,7 +96,7 @@ export const education = [
     institution: "University of Sunderland",
     campus: "Sir Tom Cowie Campus at St Peter’s",
     degree: "MSc Project Management",
-    duration: "Jan 2026 – Expected Spring 2027",
+    duration: "Jan 2026 to Expected Spring 2027",
     status: "Currently pursuing",
     highlights: [
       "Aligned with PMI and APM professional standards",
@@ -109,8 +109,8 @@ export const education = [
     id: "ucp",
     institution: "University of Central Punjab",
     campus: "Lahore, Pakistan",
-    degree: "Bachelor of Science — English Language and Literature",
-    duration: "Sep 2020 – July 2024",
+    degree: "Bachelor of Science in English Language and Literature",
+    duration: "Sep 2020 to July 2024",
     status: "Completed",
     highlights: [
       "Major in English language and literature",
@@ -124,7 +124,7 @@ export const education = [
     institution: "Punjab Group of Colleges",
     campus: "Lahore, Pakistan",
     degree: "Intermediate in Fine Arts",
-    duration: "Sep 2017 – July 2019",
+    duration: "Sep 2017 to July 2019",
     status: "Completed",
     highlights: [
       "Creative foundations in fine arts",
@@ -139,7 +139,7 @@ export const experience = [
     org: "Cornerstone School and College",
     location: "Lahore",
     role: "Permanent Literacy Instructor",
-    dates: "Aug 2024 – Sep 2025",
+    dates: "Aug 2024 to Sep 2025",
     image: "/media/portrait/lecture-hall.jpg",
     responsibilities: [
       "Planned and delivered engaging English lessons for elementary students",
@@ -150,10 +150,10 @@ export const experience = [
     skills: ["Curriculum design", "Classroom leadership", "Digital learning"],
   },
   {
-    org: "Allied School — Johar Town Campus",
+    org: "Allied School, Johar Town Campus",
     location: "Lahore",
     role: "Full-Time Teaching Position",
-    dates: "Nov 2023 – Apr 2024",
+    dates: "Nov 2023 to Apr 2024",
     image: "/media/aesthetic/atmosphere-1.jpg",
     responsibilities: [
       "Applied differentiated strategies for diverse learning styles",
@@ -163,10 +163,10 @@ export const experience = [
     skills: ["Differentiated instruction", "Student engagement"],
   },
   {
-    org: "Voice News — Pakistan Ki Awaaz",
+    org: "Voice News, Pakistan Ki Awaaz",
     location: "Pakistan",
     role: "Production Research Intern",
-    dates: "Aug 2023 – Oct 2023",
+    dates: "Aug 2023 to Oct 2023",
     image: "/media/aesthetic/atmosphere-2.jpg",
     responsibilities: [
       "Researched 30+ news stories and social issues for editorial use",
@@ -179,7 +179,7 @@ export const experience = [
     org: "Third Culture Coffee House",
     location: "Lahore",
     role: "Sales & Floor Supervisor",
-    dates: "Mar 2023 – Aug 2023",
+    dates: "Mar 2023 to Aug 2023",
     image: "/media/aesthetic/atmosphere-3.jpg",
     responsibilities: [
       "Supervised front-of-house operations during peak hours",
@@ -191,8 +191,8 @@ export const experience = [
   {
     org: "Nash-o-Numa Montessori and School",
     location: "Lahore",
-    role: "Internship — Teacher’s Assistant",
-    dates: "Jun 2022 – Oct 2022",
+    role: "Internship: Teacher’s Assistant",
+    dates: "Jun 2022 to Oct 2022",
     image: "/media/portrait/portrait-02.jpg",
     responsibilities: [
       "Delivered 10+ English lessons to Grade 1 and Grade 2 students",
@@ -205,7 +205,7 @@ export const experience = [
     org: "Jasmin’s Canapes",
     location: "Newcastle upon Tyne",
     role: "Deli Assistant (Front of House)",
-    dates: "Jan 2026 – Present",
+    dates: "Jan 2026 to Present",
     image: "/media/portrait/portrait-03.jpg",
     responsibilities: [
       "Delivers welcoming customer service in a fast-paced retail setting",
@@ -218,7 +218,7 @@ export const experience = [
     org: "Shaukat Khanum Memorial Cancer Hospital",
     location: "Lahore",
     role: "Volunteer",
-    dates: "Jun 2020 – Aug 2020",
+    dates: "Jun 2020 to Aug 2020",
     image: "/media/aesthetic/atmosphere-4.jpg",
     responsibilities: [
       "Led four awareness campaigns on healthcare and cancer prevention",
@@ -234,7 +234,7 @@ export const leadership = [
     title: "Co-Founder & Vice President",
     org: "Paws and Claws Animal Welfare Society",
     place: "University of Central Punjab",
-    dates: "Aug 2023 – Sep 2024",
+    dates: "Aug 2023 to Sep 2024",
     points: [
       "Co-founded a student-led welfare club focused on animal rights and care",
       "Partnered with local shelters for awareness drives and rescue initiatives",
@@ -243,10 +243,10 @@ export const leadership = [
     ],
   },
   {
-    title: "Event Organizer — Team Member",
+    title: "Event Organizer, Team Member",
     org: "1st International Conference on Language and Literature",
     place: "University of Central Punjab",
-    dates: "June 1–2, 2023",
+    dates: "June 1-2, 2023",
     points: [
       "Supported a two-day international conference for academics and students",
       "Assisted keynote sessions, panels, workshops, and paper presentations",
@@ -257,7 +257,7 @@ export const leadership = [
     title: "Management Team",
     org: "International Conference on Language, Literature, and Linguistics",
     place: "Faculty of Languages and Literature, UCP",
-    dates: "June 6–7, 2024",
+    dates: "June 6-7, 2024",
     points: [
       "Served on the management team for Erasure, Resistance, and Innovation",
       "Supported conference operations alongside faculty organizers",
@@ -268,32 +268,32 @@ export const leadership = [
 
 export const certificates = [
   {
-    title: "LUMS — Digital Journalism",
+    title: "LUMS Digital Journalism",
     issuer: "Lahore University of Management Sciences",
-    date: "Jul – Aug 2023",
+    date: "Jul to Aug 2023",
     image: "/media/certificates/certificate-extra-01.jpg",
     note: "Course certification in digital journalism practice",
   },
   {
-    title: "Certificate of Appreciation — Great Volunteer",
+    title: "Certificate of Appreciation: Great Volunteer",
     issuer: "Nashtay Walay Street Food Gala · UCP",
     date: "16 Apr 2022",
     image: "/media/certificates/nashtay-volunteer.jpg",
   },
   {
-    title: "Certificate of Participation — Sketch Week",
+    title: "Certificate of Participation: Sketch Week",
     issuer: "Takhleeqkar Fine Arts Society · UCP",
-    date: "17–19 May 2022",
+    date: "17-19 May 2022",
     image: "/media/certificates/sketch-week.jpg",
   },
   {
-    title: "Certificate of Excellence — Calligraphy Workshop",
+    title: "Certificate of Excellence: Calligraphy Workshop",
     issuer: "Takhleeqkar · UCP",
     date: "14 Jun 2022",
     image: "/media/certificates/calligraphy-workshop.jpg",
   },
   {
-    title: "Certificate of Appreciation — Farewell Decor",
+    title: "Certificate of Appreciation: Farewell Decor",
     issuer: "Alumni Relations Office · Fine Art Fraternity UCP",
     date: "2020",
     image: "/media/certificates/farewell-2020.jpg",
@@ -307,13 +307,13 @@ export const certificates = [
   {
     title: "Conference Management Team",
     issuer: "Erasure, Resistance, and Innovation · UCP",
-    date: "6–7 Jun 2024",
+    date: "6-7 Jun 2024",
     image: "/media/certificates/conference-management-2024.jpg",
   },
   {
     title: "Conference Participation",
     issuer: "International Conference on Language, Literature, and Linguistics",
-    date: "6–7 Jun 2024",
+    date: "6-7 Jun 2024",
     image: "/media/certificates/conference-participation-2024.jpg",
   },
 ];
@@ -326,7 +326,7 @@ export const gallery = [
   },
   {
     src: "/media/portrait/graduation-02.jpg",
-    caption: "Academic milestone — University of Central Punjab.",
+    caption: "Academic milestone at the University of Central Punjab.",
     alt: "Graduation moment",
   },
   {
@@ -341,7 +341,7 @@ export const gallery = [
   },
   {
     src: "/media/campus/ucp/ucp-1.jpg",
-    caption: "University of Central Punjab — where the story deepened.",
+    caption: "University of Central Punjab, where the story deepened.",
     alt: "UCP campus",
   },
   {
@@ -351,7 +351,7 @@ export const gallery = [
   },
   {
     src: "/media/campus/sunderland/sunderland-1.jpg",
-    caption: "University of Sunderland — the Master’s chapter.",
+    caption: "University of Sunderland, the Master’s chapter.",
     alt: "Sunderland campus",
   },
   {
@@ -371,7 +371,7 @@ export const gallery = [
   },
   {
     src: "/media/aesthetic/atmosphere-1.jpg",
-    caption: "Atmosphere and place — part of the biography.",
+    caption: "Atmosphere and place, part of the biography.",
     alt: "Atmospheric photograph",
   },
   {
@@ -390,7 +390,7 @@ export const masters = {
   progress: 50,
   pathway: "15-month January intake",
   blurb:
-    "Currently pursuing an MSc designed for graduates of any discipline, aligned with the Project Management Institute (PMI) and the Association for Project Management (APM)—bridging literary insight, teaching leadership, and professional project practice.",
+    "Currently pursuing an MSc designed for graduates of any discipline, aligned with the Project Management Institute (PMI) and the Association for Project Management (APM), bridging literary insight, teaching leadership, and professional project practice.",
   focus: [
     "Project fundamentals & delivery methods (including agile)",
     "International project management",
@@ -448,18 +448,18 @@ export const testimonials = [
     role: "Principal",
     placeholder: true,
     quote:
-      "A testimonial from a school principal will appear here—speaking to Maham’s classroom presence and literacy leadership.",
+      "A testimonial from a school principal will appear here, speaking to Maham’s classroom presence and literacy leadership.",
   },
   {
     role: "Professor",
     placeholder: true,
     quote:
-      "A faculty reflection will appear here—on her academic curiosity, conference contribution, and scholarly growth.",
+      "A faculty reflection will appear here, on her academic curiosity, conference contribution, and scholarly growth.",
   },
   {
     role: "Supervisor",
     placeholder: true,
     quote:
-      "A supervisor’s note will appear here—on reliability, research craft, and collaborative professionalism.",
+      "A supervisor’s note will appear here, on reliability, research craft, and collaborative professionalism.",
   },
 ];

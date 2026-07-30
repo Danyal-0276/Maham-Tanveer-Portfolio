@@ -19,7 +19,7 @@ export function LeadershipSection() {
             Service beyond the classroom
           </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Animal welfare, conference stewardship, and student leadership—
+            Animal welfare, conference stewardship, and student leadership: 
             achievements told as chapters of responsibility.
           </p>
         </FadeIn>
