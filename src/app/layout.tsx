@@ -5,6 +5,7 @@ import { LoadingReveal } from "@/components/layout/LoadingReveal";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteNav } from "@/components/layout/SiteNav";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { WanderingFauna } from "@/components/layout/WanderingFauna";
 import { profile } from "@/data/biography";
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-cream text-ink" suppressHydrationWarning>
         <SmoothScroll>
           <CustomCursor />
+          <WanderingFauna />
           <LoadingReveal />
           <main className="flex-1">{children}</main>
           <SiteFooter />

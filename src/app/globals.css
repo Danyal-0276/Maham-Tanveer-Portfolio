@@ -50,6 +50,88 @@ html.has-custom-cursor * {
   }
 }
 
+/* Autonomous fauna: real wing flaps + running legs */
+.fauna-butterfly {
+  perspective: 120px;
+}
+
+.fauna-wing {
+  transform-box: fill-box;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  animation: fauna-flap 0.18s ease-in-out infinite alternate;
+}
+
+.fauna-wing-left {
+  transform-origin: 100% 50%;
+}
+
+.fauna-wing-right {
+  transform-origin: 0% 50%;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes fauna-flap {
+  from {
+    transform: rotateY(8deg);
+  }
+  to {
+    transform: rotateY(62deg);
+  }
+}
+
+.fauna-runner .fauna-leg {
+  transform-box: fill-box;
+  transform-origin: top center;
+  animation: fauna-run 0.28s ease-in-out infinite;
+}
+
+.fauna-runner .fauna-leg-1 {
+  animation-delay: 0s;
+}
+.fauna-runner .fauna-leg-2 {
+  animation-delay: -0.14s;
+}
+.fauna-runner .fauna-leg-3 {
+  animation-delay: -0.07s;
+}
+.fauna-runner .fauna-leg-4 {
+  animation-delay: -0.21s;
+}
+
+@keyframes fauna-run {
+  0%,
+  100% {
+    transform: rotate(18deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-22deg) translateY(-2px);
+  }
+}
+
+.fauna-tail {
+  transform-box: fill-box;
+  transform-origin: right center;
+  animation: fauna-tail 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes fauna-tail {
+  from {
+    transform: rotate(-8deg);
+  }
+  to {
+    transform: rotate(12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fauna-wing,
+  .fauna-runner .fauna-leg,
+  .fauna-tail {
+    animation: none !important;
+  }
+}
+
 ::selection {
   background: var(--gold-soft);
   color: var(--navy);
