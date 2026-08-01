@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { navChapters, profile } from "@/data/biography";
+import { navChapters } from "@/data/biography";
 import { cn } from "@/lib/utils";
 
 export function SiteNav() {
@@ -36,7 +36,7 @@ export function SiteNav() {
   }, [open]);
 
   const linkClass =
-    "whitespace-nowrap rounded-full px-2.5 py-1 text-[0.62rem] uppercase tracking-[0.12em] text-cream/75 transition hover:bg-cream/10 hover:text-cream";
+    "whitespace-nowrap rounded-full px-2 py-1 text-[0.58rem] uppercase tracking-[0.1em] text-cream/75 transition hover:bg-cream/10 hover:text-cream";
 
   return (
     <header
@@ -45,34 +45,31 @@ export function SiteNav() {
         hidden && !open ? "translate-y-[calc(100%+2rem)]" : "translate-y-0"
       )}
     >
-      <div className="pointer-events-auto relative w-full max-w-4xl">
+      <div className="pointer-events-auto relative w-auto max-w-[min(100%,42rem)]">
         <div
           className={cn(
-            "relative mx-auto flex items-center gap-1.5 rounded-full border border-white/20 px-1.5 py-1 shadow-[0_10px_40px_rgba(15,23,42,0.3),inset_0_1px_0_rgba(255,255,255,0.22)]",
+            "relative mx-auto flex w-fit items-center gap-1 rounded-full border border-white/20 px-1 py-1 shadow-[0_10px_40px_rgba(15,23,42,0.3),inset_0_1px_0_rgba(255,255,255,0.22)]",
             "bg-navy/45 backdrop-blur-2xl supports-[backdrop-filter]:bg-navy/35",
             "before:pointer-events-none before:absolute before:inset-px before:rounded-full before:bg-gradient-to-b before:from-white/12 before:to-transparent before:opacity-80"
           )}
         >
           <a
             href="#welcome"
-            className="relative z-10 flex shrink-0 items-center gap-1.5 rounded-full bg-cream/10 p-1 pr-2.5 ring-1 ring-white/15"
+            className="relative z-10 flex shrink-0 items-center rounded-full bg-cream/10 p-1 ring-1 ring-white/15"
             aria-label="Home"
           >
             <Image
               src="/brand/mt-logo.png"
               alt=""
-              width={32}
-              height={32}
-              className="h-7 w-7 object-contain"
+              width={28}
+              height={28}
+              className="h-6 w-6 object-contain"
               priority
               unoptimized
             />
-            <span className="hidden font-serif text-xs text-cream sm:inline">
-              {profile.name.split(" ")[0]}
-            </span>
           </a>
 
-          <nav className="relative z-10 hidden min-w-0 flex-1 items-center justify-center gap-0 overflow-x-auto lg:flex">
+          <nav className="relative z-10 hidden items-center justify-center gap-0 lg:flex">
             {navChapters
               .filter((c) => c.id !== "welcome" && c.id !== "contact")
               .slice(0, 7)
@@ -85,7 +82,7 @@ export function SiteNav() {
 
           <a
             href="#contact"
-            className="relative z-10 ml-auto hidden rounded-full bg-gold px-3.5 py-1.5 text-[0.62rem] uppercase tracking-[0.12em] text-navy transition hover:bg-gold/90 sm:inline-flex"
+            className="relative z-10 hidden rounded-full bg-gold px-3 py-1.5 text-[0.58rem] uppercase tracking-[0.1em] text-navy transition hover:bg-gold/90 sm:inline-flex"
           >
             Contact
           </a>
@@ -102,7 +99,7 @@ export function SiteNav() {
 
         <div
           className={cn(
-            "absolute bottom-[calc(100%+0.75rem)] left-0 right-0 overflow-hidden rounded-3xl border border-white/20 bg-navy/70 p-3 shadow-[0_20px_60px_rgba(15,23,42,0.45)] backdrop-blur-2xl lg:hidden",
+            "absolute bottom-[calc(100%+0.75rem)] left-1/2 w-[min(92vw,20rem)] -translate-x-1/2 overflow-hidden rounded-3xl border border-white/20 bg-navy/70 p-3 shadow-[0_20px_60px_rgba(15,23,42,0.45)] backdrop-blur-2xl lg:hidden",
             open ? "block" : "hidden"
           )}
         >

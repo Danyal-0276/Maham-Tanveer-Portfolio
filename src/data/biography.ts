@@ -93,21 +93,6 @@ export const experience = [
     skills: ["Curriculum design", "Classroom leadership", "Digital learning"],
   },
   {
-    org: "Allied School, Johar Town Campus",
-    location: "Lahore",
-    role: "Full-Time Teaching Position",
-    dates: "Nov 2023 to Apr 2024",
-    image: "/media/experience/allied-school.png",
-    imageFit: "contain" as const,
-    imageBg: "light" as const,
-    responsibilities: [
-      "Applied differentiated strategies for diverse learning styles",
-      "Integrated technology and creative resources to deepen understanding",
-      "Strengthened communication, reading, and problem-solving skills",
-    ],
-    skills: ["Differentiated instruction", "Student engagement"],
-  },
-  {
     org: "Voice News, Pakistan Ki Awaaz",
     location: "Pakistan",
     role: "Production Research Intern",
@@ -137,20 +122,6 @@ export const experience = [
       "Delegated responsibilities and oversaw effective execution of club initiatives",
     ],
     skills: ["Student leadership", "Campaign strategy", "Community outreach"],
-  },
-  {
-    org: "Third Culture Coffee House",
-    location: "Lahore",
-    role: "Sales & Floor Supervisor",
-    dates: "Mar 2023 to Aug 2023",
-    image: "/media/aesthetic/atmosphere-3.jpg",
-    imageFit: "cover" as const,
-    responsibilities: [
-      "Supervised front-of-house operations during peak hours",
-      "Trained and onboarded three new team members",
-      "Supported cash reconciliation, stock, and brand experience",
-    ],
-    skills: ["Team supervision", "Customer service", "Operations"],
   },
   {
     org: "Nash-o-Numa Montessori and School",
@@ -234,14 +205,26 @@ export const leadership = [
   },
 ];
 
+export const featuredCertificate = {
+  title: "Digital Journalism",
+  documentTitle: "Certificate of Completion",
+  issuer: "Lahore University of Management Sciences",
+  issuerShort: "LUMS",
+  department: "Centre for Continuing Education Studies",
+  date: "3 Jul 2023 – 9 Aug 2023",
+  dateLabel: "Summer 2023 · five-week course",
+  image: "/media/certificates/certificate-extra-01.jpg",
+  summary:
+    "A professional short course completed through LUMS CES — Pakistan’s leading university for management and social sciences — distinct from campus society awards, and focused on contemporary digital journalism practice.",
+  highlights: [
+    "Awarded by LUMS Centre for Continuing Education Studies (CES)",
+    "Course category aligned with Communication, Journalism, and Media",
+    "Completed 3 July to 9 August 2023",
+    "Strengthened reporting craft ahead of newsroom and literacy work",
+  ],
+};
+
 export const certificates = [
-  {
-    title: "LUMS Digital Journalism",
-    issuer: "Lahore University of Management Sciences",
-    date: "Jul to Aug 2023",
-    image: "/media/certificates/certificate-extra-01.jpg",
-    note: "Course certification in digital journalism practice",
-  },
   {
     title: "Certificate of Appreciation: Great Volunteer",
     issuer: "Nashtay Walay Street Food Gala · UCP",
@@ -287,11 +270,6 @@ export const certificates = [
 ];
 
 export const gallery = [
-  {
-    src: "/media/hero/graduation.jpg",
-    caption: "This day marked the beginning of my professional journey.",
-    alt: "Graduation portrait of Maham Tanveer",
-  },
   {
     src: "/media/portrait/graduation-02.jpg",
     caption: "Academic milestone at the University of Central Punjab.",
@@ -366,11 +344,6 @@ export const gallery = [
     src: "/media/gallery/husky-illustration.png",
     caption: "A joyful reminder of the animals behind the cause.",
     alt: "Illustrated smiling husky",
-  },
-  {
-    src: "/media/experience/allied-school.png",
-    caption: "Full-time teaching at Allied School, Johar Town.",
-    alt: "Allied School crest",
   },
   {
     src: "/media/experience/cornerstone.png",

@@ -20,6 +20,8 @@ export function ExperienceSection() {
     typeof window !== "undefined" ? prefersReducedMotion() : false
   );
 
+  const count = experience.length;
+
   useGSAP(
     () => {
       registerGsap();
@@ -38,7 +40,7 @@ export function ExperienceSection() {
         rootRef.current.querySelectorAll("[data-exp-tick]")
       );
 
-      if (!panels.length) return;
+      if (!panels.length || panels.length !== count) return;
 
       gsap.set(panels, { autoAlpha: 0, y: 36 });
       gsap.set(images, { autoAlpha: 0, scale: 1.1 });
@@ -149,7 +151,7 @@ export function ExperienceSection() {
         }
       });
     },
-    { scope: rootRef, dependencies: [reduced] }
+    { scope: rootRef, dependencies: [reduced, count], revertOnUpdate: true }
   );
 
   if (reduced) {
@@ -227,9 +229,9 @@ export function ExperienceSection() {
 
         <div className="absolute left-4 right-4 top-6 z-10 mx-auto flex max-w-7xl items-center gap-4 sm:left-6 sm:right-6 sm:top-8">
           <div className="flex gap-1.5">
-            {experience.map((_, i) => (
+            {experience.map((job) => (
               <span
-                key={i}
+                key={`${job.org}-tick`}
                 data-exp-tick
                 className="h-8 w-1 origin-top rounded-full bg-gold/25"
               />
@@ -243,15 +245,15 @@ export function ExperienceSection() {
             />
           </div>
           <p className="hidden text-[0.65rem] uppercase tracking-[0.18em] text-cream/50 sm:block">
-            Scroll the theatre
+            Scroll the theatre · {String(count).padStart(2, "0")} roles
           </p>
         </div>
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 px-4 pb-24 pt-28 sm:px-6 sm:pt-32 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-12">
           <div className="relative h-[7rem] sm:h-[9.5rem]">
-            {experience.map((_, i) => (
+            {experience.map((job, i) => (
               <p
-                key={i}
+                key={`${job.org}-num`}
                 data-exp-num
                 className="absolute left-0 top-0 font-serif text-[clamp(4.5rem,14vw,9.5rem)] leading-none text-gold"
                 aria-hidden
