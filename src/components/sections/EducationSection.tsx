@@ -1,26 +1,42 @@
+"use client";
+
 import Image from "next/image";
-import { FadeIn } from "@/components/layout/FadeIn";
+import { SectionShell } from "@/components/layout/SectionShell";
 import { education } from "@/data/biography";
 
 export function EducationSection() {
   return (
     <section id="education" className="section-pad bg-navy text-cream">
       <div className="mx-auto max-w-7xl">
-        <FadeIn>
-          <p className="section-eyebrow !text-gold">Education</p>
-          <h2 className="mt-3 font-serif text-4xl sm:text-5xl">
-            University records
-          </h2>
-          <p className="mt-4 max-w-2xl text-cream/70">
-            Formal study across Lahore and Sunderland. Each chapter deepening
-            craft, curiosity, and professional readiness.
-          </p>
-        </FadeIn>
+        <SectionShell preset="rise" splitHeading>
+          <div data-motion-target>
+            <p className="section-eyebrow !text-gold">Education</p>
+            <h2
+              data-motion-heading
+              className="mt-3 font-serif text-4xl sm:text-5xl"
+            >
+              University records
+            </h2>
+            <p className="mt-4 max-w-2xl text-cream/70">
+              Formal study across Lahore and Sunderland. Each chapter deepening
+              craft, curiosity, and professional readiness.
+            </p>
+          </div>
+        </SectionShell>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-3">
-          {education.map((ed, i) => (
-            <FadeIn key={ed.id} delay={i * 0.08}>
-              <article className="group relative overflow-hidden border border-cream/15 bg-navy transition duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+        <SectionShell
+          className="mt-14"
+          staggerChildren
+          childPreset="slideLeft"
+        >
+          <div className="grid gap-8 lg:grid-cols-3">
+            {education.map((ed, i) => (
+              <article
+                key={ed.id}
+                data-motion-child
+                data-enter={i % 2 === 0 ? "left" : "right"}
+                className="group relative overflow-hidden border border-cream/15 bg-navy transition duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+              >
                 <div className="relative h-44 overflow-hidden">
                   <Image
                     src={ed.image}
@@ -49,9 +65,9 @@ export function EducationSection() {
                   </ul>
                 </div>
               </article>
-            </FadeIn>
-          ))}
-        </div>
+            ))}
+          </div>
+        </SectionShell>
       </div>
     </section>
   );

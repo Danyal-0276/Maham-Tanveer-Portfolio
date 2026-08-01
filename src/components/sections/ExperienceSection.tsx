@@ -56,12 +56,12 @@ export function ExperienceSection() {
       if (heading instanceof HTMLElement) {
         const words = splitWords(heading);
         gsap.from(words, {
-          yPercent: 110,
+          yPercent: 70,
           opacity: 0,
-          stagger: 0.04,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: { trigger: pinRef.current, start: "top 75%" },
+          stagger: 0.02,
+          duration: 0.4,
+          ease: "power2.out",
+          scrollTrigger: { trigger: pinRef.current, start: "top 80%" },
         });
       }
 
@@ -70,9 +70,9 @@ export function ExperienceSection() {
           trigger: pinRef.current,
           start: "top top",
           end: () =>
-            `+=${Math.max(panels.length, 1) * window.innerHeight * 0.95}`,
+            `+=${Math.max(panels.length, 1) * window.innerHeight * 0.7}`,
           pin: true,
-          scrub: 0.75,
+          scrub: 0.4,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
@@ -97,38 +97,38 @@ export function ExperienceSection() {
 
         tl.to(
           images[i - 1],
-          { autoAlpha: 0, scale: 0.92, duration: 0.9, ease: "power2.inOut" },
+          { autoAlpha: 0, scale: 0.96, duration: 0.55, ease: "power2.inOut" },
           at
         );
         tl.fromTo(
           images[i],
-          { autoAlpha: 0, scale: 1.14 },
-          { autoAlpha: 1, scale: 1, duration: 0.9, ease: "power2.inOut" },
+          { autoAlpha: 0, scale: 1.06 },
+          { autoAlpha: 1, scale: 1, duration: 0.55, ease: "power2.inOut" },
           at
         );
 
         tl.to(
           numbers[i - 1],
-          { autoAlpha: 0, yPercent: -40, duration: 0.4, ease: "power2.in" },
+          { autoAlpha: 0, yPercent: -24, duration: 0.28, ease: "power2.in" },
           at
         );
         tl.fromTo(
           numbers[i],
-          { autoAlpha: 0, yPercent: 45 },
-          { autoAlpha: 1, yPercent: 0, duration: 0.55, ease: "power3.out" },
-          at + 0.08
+          { autoAlpha: 0, yPercent: 28 },
+          { autoAlpha: 1, yPercent: 0, duration: 0.35, ease: "power2.out" },
+          at + 0.05
         );
 
         tl.to(
           panels[i - 1],
-          { autoAlpha: 0, y: -28, duration: 0.4, ease: "power2.in" },
+          { autoAlpha: 0, y: -16, duration: 0.28, ease: "power2.in" },
           at
         );
         tl.fromTo(
           panels[i],
-          { autoAlpha: 0, y: 40 },
-          { autoAlpha: 1, y: 0, duration: 0.55, ease: "power3.out" },
-          at + 0.1
+          { autoAlpha: 0, y: 24 },
+          { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" },
+          at + 0.06
         );
 
         if (ticks[i - 1]) {

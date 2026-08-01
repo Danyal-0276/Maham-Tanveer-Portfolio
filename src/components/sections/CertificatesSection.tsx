@@ -16,7 +16,8 @@ import {
   registerGsap,
   splitWords,
 } from "@/lib/gsap";
-import { FadeIn } from "@/components/layout/FadeIn";
+import { animatePreset } from "@/lib/section-motion";
+import { SectionShell } from "@/components/layout/SectionShell";
 
 export function CertificatesSection() {
   const rootRef = useRef<HTMLElement>(null);
@@ -37,23 +38,23 @@ export function CertificatesSection() {
       if (heading instanceof HTMLElement) {
         const words = splitWords(heading);
         gsap.from(words, {
-          yPercent: 120,
+          yPercent: 70,
           opacity: 0,
-          stagger: 0.05,
-          duration: 0.9,
-          ease: "power4.out",
-          scrollTrigger: { trigger: heading, start: "top 82%" },
+          stagger: 0.025,
+          duration: 0.4,
+          ease: "power2.out",
+          scrollTrigger: { trigger: heading, start: "top 88%" },
         });
       }
 
       const featured = rootRef.current.querySelector("[data-lums-feature]");
       if (featured) {
-        gsap.from(featured, {
-          y: 48,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: { trigger: featured, start: "top 78%" },
+        animatePreset(gsap, featured, "clipWipe", {
+          scrollTrigger: {
+            trigger: featured,
+            start: "top 78%",
+            toggleActions: "play none none none",
+          },
         });
       }
 
@@ -77,7 +78,7 @@ export function CertificatesSection() {
           end: () =>
             `+=${Math.abs(getScrollAmount()) + window.innerHeight * 0.4}`,
           pin: true,
-          scrub: 0.85,
+          scrub: 0.45,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
@@ -165,12 +166,17 @@ export function CertificatesSection() {
       {/* Featured LUMS certificate — separate from campus archive */}
       <div className="section-pad border-b border-navy/10">
         <div className="mx-auto max-w-7xl">
-          <FadeIn>
-            <p className="section-eyebrow">Certifications</p>
-            <h2 className="mt-3 max-w-3xl font-serif text-4xl text-navy sm:text-5xl">
-              Recognition held up to the light
-            </h2>
-          </FadeIn>
+          <SectionShell preset="rise" splitHeading>
+            <div data-motion-target>
+              <p className="section-eyebrow">Certifications</p>
+              <h2
+                data-motion-heading
+                className="mt-3 max-w-3xl font-serif text-4xl text-navy sm:text-5xl"
+              >
+                Recognition held up to the light
+              </h2>
+            </div>
+          </SectionShell>
 
           <div
             data-lums-feature

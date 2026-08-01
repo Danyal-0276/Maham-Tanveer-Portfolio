@@ -1,9 +1,14 @@
-import { FadeIn } from "@/components/layout/FadeIn";
+"use client";
+
+import { SectionShell } from "@/components/layout/SectionShell";
 import { leadership } from "@/data/biography";
 
 export function LeadershipSection() {
   return (
-    <section id="leadership" className="section-pad relative overflow-hidden bg-cream-deep/50">
+    <section
+      id="leadership"
+      className="section-pad relative overflow-hidden bg-cream-deep/50"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -13,21 +18,34 @@ export function LeadershipSection() {
         }}
       />
       <div className="relative mx-auto max-w-7xl">
-        <FadeIn>
-          <p className="section-eyebrow">Leadership</p>
-          <h2 className="mt-3 font-serif text-4xl text-navy sm:text-5xl">
-            Service beyond the classroom
-          </h2>
-          <p className="mt-4 max-w-2xl text-ink/75">
-            Animal welfare, conference stewardship, and student leadership: 
-            achievements told as chapters of responsibility.
-          </p>
-        </FadeIn>
+        <SectionShell preset="slideRight" splitHeading>
+          <div data-motion-target>
+            <p className="section-eyebrow">Leadership</p>
+            <h2
+              data-motion-heading
+              className="mt-3 font-serif text-4xl text-navy sm:text-5xl"
+            >
+              Service beyond the classroom
+            </h2>
+            <p className="mt-4 max-w-2xl text-ink/75">
+              Animal welfare, conference stewardship, and student leadership:
+              achievements told as chapters of responsibility.
+            </p>
+          </div>
+        </SectionShell>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {leadership.map((item, i) => (
-            <FadeIn key={item.org} delay={i * 0.08}>
-              <article className="h-full border border-navy/10 bg-cream/80 p-6 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:border-gold/40">
+        <SectionShell
+          className="mt-14"
+          staggerChildren
+          childPreset="slideRight"
+        >
+          <div className="grid gap-8 md:grid-cols-3">
+            {leadership.map((item) => (
+              <article
+                key={item.org}
+                data-motion-child
+                className="h-full border border-navy/10 bg-cream/80 p-6 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:border-gold/40"
+              >
                 <p className="text-xs uppercase tracking-[0.16em] text-gold">
                   {item.dates}
                 </p>
@@ -42,9 +60,9 @@ export function LeadershipSection() {
                   ))}
                 </ul>
               </article>
-            </FadeIn>
-          ))}
-        </div>
+            ))}
+          </div>
+        </SectionShell>
       </div>
     </section>
   );
