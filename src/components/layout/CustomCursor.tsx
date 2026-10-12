@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
+import { useMediaQuery } from "@/lib/use-media-query";
 import { cn } from "@/lib/utils";
 
 function ButterflyIcon({ className }: { className?: string }) {
@@ -63,15 +64,9 @@ function ButterflyIcon({ className }: { className?: string }) {
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const trailRef = useRef<HTMLDivElement>(null);
-  const [enabled, setEnabled] = useState(false);
+  const enabled = useMediaQuery("(pointer: fine) and (prefers-reduced-motion: no-preference)");
   const [hovering, setHovering] = useState(false);
   const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    if (!finePointer || prefersReducedMotion()) return;
-    setEnabled(true);
-  }, []);
 
   useEffect(() => {
     if (!enabled) return;

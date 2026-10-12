@@ -18,7 +18,7 @@ export function WhoIAmSection() {
               alt="Maham in an academic setting"
               fill
               sizes="(max-width: 1024px) 90vw, 45vw"
-              className="object-cover object-center scale-[0.9]"
+              className="object-cover object-center"
             />
           </div>
         </SectionShell>

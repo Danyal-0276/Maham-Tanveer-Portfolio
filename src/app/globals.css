@@ -235,3 +235,12 @@ html.has-custom-cursor * {
     animation: none;
   }
 }
+
+/* Keep native anchors, touch scrolling and modal focus predictable. */
+html { scroll-padding-top: 1.5rem; }
+body { overflow-wrap: break-word; }
+section { scroll-margin-top: 1.5rem; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.skip-link { position: fixed; left: 1rem; top: 1rem; z-index: 200; padding: .75rem 1rem; background: var(--navy); color: var(--cream); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.hero-spotlight { --spot-x: 50%; --spot-y: 42%; --spot-size: 0%; clip-path: circle(var(--spot-size) at var(--spot-x) var(--spot-y)); }

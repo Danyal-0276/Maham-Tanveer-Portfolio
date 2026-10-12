@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
-import { CustomCursor } from "@/components/layout/CustomCursor";
-import { LoadingReveal } from "@/components/layout/LoadingReveal";
+import localFont from "next/font/local";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteNav } from "@/components/layout/SiteNav";
-import { SmoothScroll } from "@/components/layout/SmoothScroll";
-import { WanderingFauna } from "@/components/layout/WanderingFauna";
 import { profile } from "@/data/biography";
 import "./globals.css";
 
-const manrope = Manrope({
+const manrope = localFont({
+  src: "./fonts/manrope-latin.woff2",
+  weight: "200 800",
   variable: "--font-manrope",
-  subsets: ["latin"],
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const cormorant = localFont({
+  src: "./fonts/cormorant-garamond-latin.woff2",
   variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "400 700",
   display: "swap",
 });
 
@@ -43,17 +40,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
-      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink" suppressHydrationWarning>
-        <SmoothScroll>
-          <CustomCursor />
-          <WanderingFauna />
-          <LoadingReveal />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-          <SiteNav />
-        </SmoothScroll>
+      <body className="min-h-full flex flex-col bg-cream text-ink">
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <main id="main-content" className="flex-1">{children}</main>
+        <SiteFooter />
+        <SiteNav />
       </body>
     </html>
   );

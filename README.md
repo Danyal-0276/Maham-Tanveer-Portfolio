@@ -37,21 +37,18 @@ This is not a typical developer résumé site. It is a **single-page digital bio
 
 ## Features
 
-- Story chapters with sticky navigation (Welcome → Contact)
-- Hero with graduation portrait and "Explore My Journey" CTA
-- Who I Am chapter with personal narrative
-- Education cards with campus imagery (UCP + University of Sunderland)
-- Alternating professional experience layouts with workplace media
-- Leadership chapter (Paws and Claws, conferences)
-- Certificate gallery with lightbox preview
-- Masonry photo gallery with captions
-- Master's progress section (MSc Project Management, Jan 2026 intake)
-- Skills as floating tags
-- Interactive places map (Lahore · Sunderland · Newcastle)
-- Testimonials
-- Contact form (Web3Forms or mailto fallback)
-- Smooth scrolling (Lenis), GSAP scroll reveals, custom cursor, and decorative wandering fauna
-- Custom MT monogram brand mark and favicon
+- Responsive chapter navigation with every section available on desktop and mobile
+- Hero portrait comparison with a touch-accessible graduation toggle
+- Education and current master's study grouped together
+- A dedicated UCP alumni reflection with the supplied feature image and readable transcript
+- Professional experience cards with complete responsibilities
+- A standalone Paws and Claws Animal Welfare Society chapter and vice-president portrait
+- Conference leadership, skills, and an interactive places map
+- Certificate archive with keyboard-accessible image previews
+- Gallery displayed in stable rows, with nine images initially and more on request
+- Contact via Web3Forms when configured, or a clearly labelled email-draft fallback
+- Native scrolling, no pinned sections or scroll-dependent hidden content
+- Locally bundled Manrope and Cormorant Garamond fonts for builds without Google Fonts access
 
 ---
 
@@ -61,7 +58,7 @@ This is not a typical developer résumé site. It is a **single-page digital bio
 | --- | --- |
 | Framework | [Next.js 16](https://nextjs.org/) (App Router) |
 | UI | React 19, Tailwind CSS 4 |
-| Motion | [GSAP](https://gsap.com/) + ScrollTrigger, Framer Motion, [Lenis](https://lenis.darkroom.engineering/) |
+| Scrolling | Native browser scrolling and accessible anchor navigation |
 | Components | Radix UI Dialog, Lucide icons |
 | Language | TypeScript |
 | Content | Typed data in `src/data/biography.ts` |
@@ -107,7 +104,7 @@ Optional contact form via [Web3Forms](https://web3forms.com/):
 NEXT_PUBLIC_WEB3FORMS_KEY=your_access_key_here
 ```
 
-Without the key, the form opens a prefilled **mailto** draft to Maham's email.
+Without the key, the form displays **Open email draft** and opens a prefilled **mailto** draft to Maham's email. The visitor must send the draft from their own email app. It does not claim that a message was delivered.
 
 On Vercel, add the same variable under **Project → Settings → Environment Variables** (Production and Preview). Leave Build / Output / Install commands on defaults.
 
@@ -175,3 +172,7 @@ Made with care for a story worth reading.
 **Maham Tanveer** · Newcastle upon Tyne · [mahamt024@gmail.com](mailto:mahamt024@gmail.com)
 
 </div>
+
+## Bundled fonts
+
+The Latin subsets of Manrope and Cormorant Garamond are stored under `src/app/fonts/` and loaded through `next/font/local`. They preserve the original typography without a Google Fonts request during the build. Their SIL Open Font License files are included in the same directory.

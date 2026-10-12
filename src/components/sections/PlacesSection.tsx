@@ -48,6 +48,7 @@ export function PlacesSection() {
                   key={p.id}
                   type="button"
                   onClick={() => setActive(p)}
+                  aria-pressed={active.id === p.id}
                   className={cn(
                     "absolute -translate-x-1/2 -translate-y-1/2 rounded-full transition",
                     active.id === p.id
@@ -80,6 +81,7 @@ export function PlacesSection() {
                     key={p.id}
                     type="button"
                     onClick={() => setActive(p)}
+                  aria-pressed={active.id === p.id}
                     className={cn(
                       "px-3 py-1.5 text-xs uppercase tracking-[0.12em] transition",
                       active.id === p.id

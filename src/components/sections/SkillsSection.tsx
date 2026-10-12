@@ -14,11 +14,11 @@ export function SkillsSection() {
               data-motion-heading
               className="mt-3 font-serif text-4xl text-navy sm:text-5xl"
             >
-              Craft in motion
+              Skills built through practice
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-ink/75">
               Capabilities shaped by classrooms, newsrooms, campaigns, and
-              postgraduate project study, presented as living tags, not meters.
+              postgraduate project study.
             </p>
           </div>
         </SectionShell>

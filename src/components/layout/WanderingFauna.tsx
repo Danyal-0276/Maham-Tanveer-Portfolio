@@ -180,7 +180,7 @@ export function WanderingFauna() {
   const crittersRef = useRef<Critter[]>([]);
   const nodeRefs = useRef<Map<number, HTMLDivElement>>(new Map());
   const rafRef = useRef(0);
-  const [ready, setReady] = useState(false);
+  const [critters, setCritters] = useState<Critter[]>([]);
 
   useEffect(() => {
     if (prefersReducedMotion()) return;
@@ -189,7 +189,8 @@ export function WanderingFauna() {
     const w = window.innerWidth;
     const h = window.innerHeight;
     crittersRef.current = makeCritters(w, h, mobile);
-    setReady(true);
+    const initialCritters = crittersRef.current;
+    const readyFrame = requestAnimationFrame(() => setCritters(initialCritters));
 
     let last = performance.now();
 
@@ -263,12 +264,13 @@ export function WanderingFauna() {
     window.addEventListener("resize", onResize);
 
     return () => {
+      cancelAnimationFrame(readyFrame);
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", onResize);
     };
   }, []);
 
-  if (!ready) return null;
+  if (!critters.length) return null;
 
   return (
     <div
@@ -276,7 +278,7 @@ export function WanderingFauna() {
       className="pointer-events-none fixed inset-0 z-[40] overflow-hidden"
       aria-hidden
     >
-      {crittersRef.current.map((c) => (
+      {critters.map((c) => (
         <div
           key={c.id}
           ref={(node) => {

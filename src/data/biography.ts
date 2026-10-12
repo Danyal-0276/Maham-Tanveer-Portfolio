@@ -21,14 +21,15 @@ export const navChapters = [
   { id: "welcome", label: "Welcome" },
   { id: "who-i-am", label: "Who I Am" },
   { id: "education", label: "Education" },
+  { id: "masters", label: "Master’s" },
+  { id: "alumni-reflection", label: "Alumni Reflection" },
   { id: "experience", label: "Experience" },
+  { id: "animal-welfare", label: "Paws & Claws" },
   { id: "leadership", label: "Leadership" },
-  { id: "certificates", label: "Certificates" },
-  { id: "gallery", label: "Gallery" },
-  { id: "masters", label: "Master's" },
   { id: "skills", label: "Skills" },
+  { id: "certificates", label: "Certificates" },
   { id: "places", label: "Places" },
-  { id: "testimonials", label: "Testimonials" },
+  { id: "gallery", label: "Gallery" },
   { id: "contact", label: "Contact" },
 ] as const;
 
@@ -78,6 +79,21 @@ export const education = [
 
 export const experience = [
   {
+    org: "Jasmin’s Canapes",
+    location: "Newcastle upon Tyne",
+    role: "Deli Assistant (Front of House)",
+    dates: "Jan 2026 to Present",
+    image: "/media/experience/jasmins-canapes.png",
+    imageFit: "contain" as const,
+    imageBg: "dark" as const,
+    responsibilities: [
+      "Delivers welcoming customer service in a fast-paced retail setting",
+      "Supports front-of-house flow, till operations, and visual merchandising",
+      "Upholds food hygiene, health & safety, and service standards",
+    ],
+    skills: ["UK workplace experience", "Service excellence"],
+  },
+  {
     org: "Cornerstone School and College",
     location: "Lahore",
     role: "Permanent Literacy Instructor",
@@ -108,22 +124,6 @@ export const experience = [
     skills: ["Research", "Writing", "Newsroom collaboration"],
   },
   {
-    org: "Paws and Claws Animal Welfare Society",
-    location: "University of Central Punjab",
-    role: "Co-Founder & Vice President",
-    dates: "Aug 2023 to Sep 2024",
-    image: "/media/experience/paws-and-claws.png",
-    imageFit: "contain" as const,
-    imageBg: "light" as const,
-    responsibilities: [
-      "Co-founded a student-led welfare club focused on animal rights and care",
-      "Partnered with local shelters for awareness drives and rescue initiatives",
-      "Organized fundraising, adoption campaigns, and workshops engaging 200+ students and staff",
-      "Delegated responsibilities and oversaw effective execution of club initiatives",
-    ],
-    skills: ["Student leadership", "Campaign strategy", "Community outreach"],
-  },
-  {
     org: "Nash-o-Numa Montessori and School",
     location: "Lahore",
     role: "Internship: Teacher’s Assistant",
@@ -136,21 +136,6 @@ export const experience = [
       "Supported academic and extracurricular activities",
     ],
     skills: ["Early literacy", "Administration support"],
-  },
-  {
-    org: "Jasmin’s Canapes",
-    location: "Newcastle upon Tyne",
-    role: "Deli Assistant (Front of House)",
-    dates: "Jan 2026 to Present",
-    image: "/media/experience/jasmins-canapes.png",
-    imageFit: "contain" as const,
-    imageBg: "dark" as const,
-    responsibilities: [
-      "Delivers welcoming customer service in a fast-paced retail setting",
-      "Supports front-of-house flow, till operations, and visual merchandising",
-      "Upholds food hygiene, health & safety, and service standards",
-    ],
-    skills: ["UK workplace experience", "Service excellence"],
   },
   {
     org: "Shaukat Khanum Memorial Cancer Hospital",
@@ -168,19 +153,20 @@ export const experience = [
   },
 ];
 
+export const animalWelfare = {
+  title: "Co-Founder & Vice President",
+  org: "Paws and Claws Animal Welfare Society",
+  place: "University of Central Punjab",
+  dates: "Aug 2023 to Sep 2024",
+  points: [
+    "Co-founded a student-led welfare club focused on animal rights and care",
+    "Partnered with local shelters for awareness drives and rescue initiatives",
+    "Organized fundraising, adoption campaigns, and workshops engaging 200+ students and staff",
+    "Delegated responsibilities and oversaw effective execution of club initiatives",
+  ],
+};
+
 export const leadership = [
-  {
-    title: "Co-Founder & Vice President",
-    org: "Paws and Claws Animal Welfare Society",
-    place: "University of Central Punjab",
-    dates: "Aug 2023 to Sep 2024",
-    points: [
-      "Co-founded a student-led welfare club focused on animal rights and care",
-      "Partnered with local shelters for awareness drives and rescue initiatives",
-      "Organized fundraising, adoption campaigns, and workshops engaging 200+ students and staff",
-      "Delegated responsibilities and oversaw effective execution of club initiatives",
-    ],
-  },
   {
     title: "Event Organizer, Team Member",
     org: "1st International Conference on Language and Literature",
@@ -282,7 +268,7 @@ export const gallery = [
   },
   {
     src: "/media/gallery/graduation-friends-four.png",
-    caption: "Graduates together, Institute of Central Punjab memories.",
+    caption: "Graduates together, University of Central Punjab memories.",
     alt: "Illustrated graduation portrait with friends",
   },
   {
@@ -393,7 +379,6 @@ export const masters = {
   campus: "Sir Tom Cowie Campus at St Peter’s",
   started: "January 2026",
   expected: "Spring 2027",
-  progress: 50,
   pathway: "15-month January intake",
   blurb:
     "Currently pursuing an MSc designed for graduates of any discipline, aligned with the Project Management Institute (PMI) and the Association for Project Management (APM), bridging literary insight, teaching leadership, and professional project practice.",
@@ -446,26 +431,5 @@ export const places = [
     detail: "Current home base in the North East of England",
     x: 26,
     y: 34,
-  },
-];
-
-export const testimonials = [
-  {
-    role: "Principal",
-    placeholder: true,
-    quote:
-      "A testimonial from a school principal will appear here, speaking to Maham’s classroom presence and literacy leadership.",
-  },
-  {
-    role: "Professor",
-    placeholder: true,
-    quote:
-      "A faculty reflection will appear here, on her academic curiosity, conference contribution, and scholarly growth.",
-  },
-  {
-    role: "Supervisor",
-    placeholder: true,
-    quote:
-      "A supervisor’s note will appear here, on reliability, research craft, and collaborative professionalism.",
   },
 ];

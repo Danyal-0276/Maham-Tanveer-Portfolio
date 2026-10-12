@@ -1,122 +1,39 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { navChapters } from "@/data/biography";
-import { cn } from "@/lib/utils";
+import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export function SiteNav() {
-  const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
-
-  useEffect(() => {
-    lastY.current = window.scrollY;
-
-    const onScroll = () => {
-      const y = window.scrollY;
-      const delta = y - lastY.current;
-
-      if (open) {
-        setHidden(false);
-      } else if (y < 48) {
-        setHidden(false);
-      } else if (delta > 8) {
-        setHidden(true);
-      } else if (delta < -8) {
-        setHidden(false);
-      }
-
-      lastY.current = y;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [open]);
-
-  const linkClass =
-    "whitespace-nowrap rounded-full px-2 py-1 text-[0.58rem] uppercase tracking-[0.1em] text-cream/75 transition hover:bg-cream/10 hover:text-cream";
-
   return (
-    <header
-      className={cn(
-        "pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-3 transition-transform duration-300 ease-out sm:bottom-5",
-        hidden && !open ? "translate-y-[calc(100%+2rem)]" : "translate-y-0"
-      )}
-    >
-      <div className="pointer-events-auto relative w-auto max-w-[min(100%,42rem)]">
-        <div
-          className={cn(
-            "relative mx-auto flex w-fit items-center gap-1 rounded-full border border-white/20 px-1 py-1 shadow-[0_10px_40px_rgba(15,23,42,0.3),inset_0_1px_0_rgba(255,255,255,0.22)]",
-            "bg-navy/45 backdrop-blur-2xl supports-[backdrop-filter]:bg-navy/35",
-            "before:pointer-events-none before:absolute before:inset-px before:rounded-full before:bg-gradient-to-b before:from-white/12 before:to-transparent before:opacity-80"
-          )}
-        >
-          <a
-            href="#welcome"
-            className="relative z-10 flex shrink-0 items-center rounded-full bg-cream/10 p-1 ring-1 ring-white/15"
-            aria-label="Home"
-          >
-            <Image
-              src="/brand/mt-logo.png"
-              alt=""
-              width={28}
-              height={28}
-              className="h-6 w-6 object-contain"
-              priority
-              unoptimized
-            />
-          </a>
-
-          <nav className="relative z-10 hidden items-center justify-center gap-0 lg:flex">
-            {navChapters
-              .filter((c) => c.id !== "welcome" && c.id !== "contact")
-              .slice(0, 7)
-              .map((c) => (
-                <a key={c.id} href={`#${c.id}`} className={linkClass}>
-                  {c.label}
-                </a>
+    <header className="pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-3">
+      <nav aria-label="Main navigation" className="pointer-events-auto flex max-w-full items-center gap-1 rounded-full border border-cream/20 bg-navy/95 p-1.5 text-cream shadow-lg backdrop-blur-xl">
+        <a href="#welcome" aria-label="Home" className="rounded-full p-1.5">
+          <Image src="/brand/mt-logo.png" alt="" width={28} height={28} className="h-7 w-7 object-contain" />
+        </a>
+        <div className="hidden items-center sm:flex">
+          {[{ id: "who-i-am", label: "About" }, { id: "education", label: "Education" }, { id: "experience", label: "Experience" }, { id: "gallery", label: "Gallery" }].map((item) => (
+            <a key={item.id} href={`#${item.id}`} className="rounded-full px-3 py-2 text-xs transition hover:bg-cream/10">{item.label}</a>
+          ))}
+        </div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <button type="button" className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm transition hover:bg-cream/10"><Menu size={16} aria-hidden="true" />Chapters</button>
+          </DialogTrigger>
+          <DialogContent className="max-w-xl">
+            <DialogTitle>Explore the story</DialogTitle>
+            <nav aria-label="All chapters" className="grid gap-2 sm:grid-cols-2">
+              {navChapters.map((chapter, i) => (
+                <DialogClose asChild key={chapter.id}>
+                  <a href={`#${chapter.id}`} className="flex items-center gap-3 rounded-sm border border-navy/10 px-4 py-3 text-sm text-navy transition hover:bg-cream-deep"><span className="text-xs text-ink/45">{String(i + 1).padStart(2, "0")}</span>{chapter.label}</a>
+                </DialogClose>
               ))}
-          </nav>
-
-          <a
-            href="#contact"
-            className="relative z-10 hidden rounded-full bg-gold px-3 py-1.5 text-[0.58rem] uppercase tracking-[0.1em] text-navy transition hover:bg-gold/90 sm:inline-flex"
-          >
-            Contact
-          </a>
-
-          <button
-            type="button"
-            className="relative z-10 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 bg-cream/10 text-cream lg:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-          </button>
-        </div>
-
-        <div
-          className={cn(
-            "absolute bottom-[calc(100%+0.75rem)] left-1/2 w-[min(92vw,20rem)] -translate-x-1/2 overflow-hidden rounded-3xl border border-white/20 bg-navy/70 p-3 shadow-[0_20px_60px_rgba(15,23,42,0.45)] backdrop-blur-2xl lg:hidden",
-            open ? "block" : "hidden"
-          )}
-        >
-          <nav className="flex max-h-[60vh] flex-col gap-1 overflow-y-auto">
-            {navChapters.map((c) => (
-              <a
-                key={c.id}
-                href={`#${c.id}`}
-                className="rounded-2xl px-4 py-3 text-sm text-cream/90 hover:bg-cream/10"
-                onClick={() => setOpen(false)}
-              >
-                {c.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </div>
+            </nav>
+          </DialogContent>
+        </Dialog>
+        <a href="#contact" className="rounded-full bg-gold px-4 py-2 text-sm font-medium text-navy transition hover:bg-gold/90">Contact</a>
+      </nav>
     </header>
   );
 }

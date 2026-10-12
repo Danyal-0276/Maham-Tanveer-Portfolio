@@ -28,7 +28,7 @@ export function LeadershipSection() {
               Service beyond the classroom
             </h2>
             <p className="mt-4 max-w-2xl text-ink/75">
-              Animal welfare, conference stewardship, and student leadership:
+              Conference stewardship and student leadership:
               achievements told as chapters of responsibility.
             </p>
           </div>
@@ -39,7 +39,7 @@ export function LeadershipSection() {
           staggerChildren
           childPreset="slideRight"
         >
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2">
             {leadership.map((item) => (
               <article
                 key={item.org}

@@ -8,25 +8,33 @@ import { Button } from "@/components/ui/button";
 import { profile } from "@/data/biography";
 
 export function ContactSection() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "draft" | "error" | "invalid">(
     "idle"
   );
+
+  const hasFormService = Boolean(process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "");
-    const email = String(data.get("email") || "");
-    const message = String(data.get("message") || "");
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
     const key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+    if (!name || !email || !message) {
+      setStatus("invalid");
+      return;
+    }
+    if (data.get("website")) return;
 
     if (!key) {
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\n\n${message}`
       );
       window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(`Portfolio inquiry from ${name}`)}&body=${body}`;
-      setStatus("sent");
+      setStatus("draft");
       return;
     }
 
@@ -34,6 +42,7 @@ export function ContactSection() {
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        signal: AbortSignal.timeout(15000),
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: key,
@@ -43,7 +52,8 @@ export function ContactSection() {
           subject: `Portfolio inquiry from ${name}`,
         }),
       });
-      if (!res.ok) throw new Error("Failed");
+      const result = await res.json();
+      if (!res.ok || result.success !== true) throw new Error("Failed");
       setStatus("sent");
       form.reset();
     } catch {
@@ -64,7 +74,7 @@ export function ContactSection() {
               alt="Maham Tanveer"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-[center_15%] scale-[0.92]"
+              className="object-cover object-[center_15%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
           </div>
@@ -84,26 +94,32 @@ export function ContactSection() {
               out directly or send a note below.
             </p>
 
-            <form onSubmit={onSubmit} className="mt-8 space-y-4">
+            {!hasFormService && <p className="mt-4 text-sm leading-relaxed text-cream/65">This form opens a draft in your email app. Review it there and send it to complete your enquiry.</p>}
+            <form onSubmit={onSubmit} className="mt-8 space-y-4" onChange={() => { if (status !== "sending") setStatus("idle"); }}>
+              <div className="hidden" aria-hidden="true"><label htmlFor="website">Leave this empty</label><input id="website" name="website" tabIndex={-1} autoComplete="off" /></div>
               <div>
-                <label htmlFor="name" className="sr-only">
+                <label htmlFor="name" className="mb-2 block text-sm text-cream/85">
                   Name
                 </label>
                 <input
                   id="name"
                   name="name"
+                  autoComplete="name"
+                  maxLength={120}
                   required
                   placeholder="Your name"
                   className="w-full border border-cream/20 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/40 outline-none focus:border-gold"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="sr-only">
+                <label htmlFor="email" className="mb-2 block text-sm text-cream/85">
                   Email
                 </label>
                 <input
                   id="email"
                   name="email"
+                  autoComplete="email"
+                  maxLength={254}
                   type="email"
                   required
                   placeholder="Your email"
@@ -111,12 +127,13 @@ export function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="sr-only">
+                <label htmlFor="message" className="mb-2 block text-sm text-cream/85">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
+                  maxLength={5000}
                   required
                   rows={5}
                   placeholder="Your message"
@@ -129,11 +146,14 @@ export function ContactSection() {
                 size="lg"
                 disabled={status === "sending"}
               >
-                {status === "sending" ? "Sending…" : "Send message"}
+                {status === "sending" ? "Sending…" : hasFormService ? "Send message" : "Open email draft"}
               </Button>
+              <div role="status" aria-live="polite">
+              {status === "draft" && <p className="text-sm text-gold">Your email app was requested. Please send the draft there. If it did not open, email {profile.email} directly.</p>}
+              {status === "invalid" && <p className="text-sm text-red-300">Please enter your name, email, and a message.</p>}
               {status === "sent" && (
                 <p className="text-sm text-gold">
-                  Thank you. Your message is on its way.
+                  Thank you. Your message has been submitted.
                 </p>
               )}
               {status === "error" && (
@@ -141,6 +161,7 @@ export function ContactSection() {
                   Something went wrong. Please email {profile.email} directly.
                 </p>
               )}
+              </div>
             </form>
 
             <div className="mt-10 grid gap-3 border-t border-cream/15 pt-8 text-sm text-cream/80">
