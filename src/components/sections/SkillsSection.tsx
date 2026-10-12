@@ -1,11 +1,13 @@
 "use client";
 
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { skills } from "@/data/biography";
 
 export function SkillsSection() {
   return (
     <section id="skills" className="section-pad">
+      <ChapterOrnament variant="flower" />
       <div className="mx-auto max-w-5xl text-center">
         <SectionShell preset="rise" splitHeading>
           <div data-motion-target>

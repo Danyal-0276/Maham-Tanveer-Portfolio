@@ -12,10 +12,13 @@ import { WhoIAmSection } from "@/components/sections/WhoIAmSection";
 import { AnimalWelfareSection } from "@/components/sections/AnimalWelfareSection";
 import { AlumniSection } from "@/components/sections/AlumniSection";
 
+import { StoryRibbon } from "@/components/layout/StoryRibbon";
+
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <StoryRibbon />
       <WhoIAmSection />
       <EducationSection />
       <MastersSection />

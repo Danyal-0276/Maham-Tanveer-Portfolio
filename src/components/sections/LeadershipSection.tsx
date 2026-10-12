@@ -1,5 +1,6 @@
 "use client";
 
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { leadership } from "@/data/biography";
 
@@ -9,6 +10,7 @@ export function LeadershipSection() {
       id="leadership"
       className="section-pad relative overflow-hidden bg-cream-deep/50"
     >
+      <ChapterOrnament variant="orbit" />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"

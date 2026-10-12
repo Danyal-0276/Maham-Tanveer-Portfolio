@@ -14,15 +14,16 @@ type ImagePreviewProps = {
   fit?: "cover" | "contain";
   sizes?: string;
   eager?: boolean;
+  aspectRatio?: string;
 };
 
-export function ImagePreview({ src, alt, caption, className, fit = "contain", sizes = "(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw", eager = false }: ImagePreviewProps) {
+export function ImagePreview({ src, alt, caption, className, fit = "contain", sizes = "(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw", eager = false, aspectRatio }: ImagePreviewProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button type="button" aria-label={`Enlarge: ${alt}`} className="group block w-full text-left">
-          <span className={cn("relative block aspect-[4/3] overflow-hidden rounded-sm border border-navy/10 bg-cream-deep", className)}>
-            <Image src={src} alt={alt} fill sizes={sizes} loading={eager ? "eager" : "lazy"} className={cn("transition-transform duration-300 group-hover:scale-[1.02]", fit === "cover" ? "object-cover" : "object-contain p-3")} />
+        <button type="button" aria-label={`Enlarge: ${alt}`} className="group block w-full self-start text-left">
+          <span style={aspectRatio ? { aspectRatio } : undefined} className={cn("art-frame relative block aspect-[4/3] overflow-hidden rounded-sm border border-navy/10 bg-cream-deep", className)}>
+            <Image src={src} alt={alt} fill sizes={sizes} loading={eager ? "eager" : "lazy"} className={cn("transition-transform duration-700 ease-out group-hover:scale-[1.045]", fit === "cover" ? "object-cover" : "object-contain p-3")} />
             <span className="absolute bottom-3 right-3 rounded-full bg-navy/85 p-2 text-cream"><Expand size={16} aria-hidden="true" /></span>
           </span>
           {caption && <span className="mt-3 block text-sm leading-relaxed text-ink/75">{caption}</span>}

@@ -22,7 +22,7 @@ export const navChapters = [
   { id: "who-i-am", label: "Who I Am" },
   { id: "education", label: "Education" },
   { id: "masters", label: "Master’s" },
-  { id: "alumni-reflection", label: "Alumni Reflection" },
+  { id: "alumni-reflection", label: "Global Leader" },
   { id: "experience", label: "Experience" },
   { id: "animal-welfare", label: "Paws & Claws" },
   { id: "leadership", label: "Leadership" },

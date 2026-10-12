@@ -1,3 +1,4 @@
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import { animalWelfare } from "@/data/biography";
 import { ImagePreview } from "@/components/ui/ImagePreview";
 import vicePresident from "../../../public/media/features/paws-and-claws-vice-president.png";
@@ -5,6 +6,7 @@ import vicePresident from "../../../public/media/features/paws-and-claws-vice-pr
 export function AnimalWelfareSection() {
   return (
     <section id="animal-welfare" className="section-pad bg-[#e7ece5]">
+      <ChapterOrnament variant="compass" />
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <ImagePreview src={vicePresident} alt="Maham Tanveer — Vice President of Paws and Claws Animal Welfare Society" className="aspect-[531/671] bg-white" sizes="(max-width: 1024px) 90vw, 40vw" />
         <div>

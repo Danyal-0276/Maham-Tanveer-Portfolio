@@ -1,9 +1,11 @@
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import Image from "next/image";
 import { masters } from "@/data/biography";
 
 export function MastersSection() {
   return (
     <section id="masters" className="section-pad relative overflow-hidden bg-navy text-cream">
+      <ChapterOrnament variant="compass" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
           <p className="section-eyebrow">The next chapter · Currently pursuing</p>

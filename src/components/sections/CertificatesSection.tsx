@@ -1,9 +1,11 @@
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import { certificates, featuredCertificate } from "@/data/biography";
 import { ImagePreview } from "@/components/ui/ImagePreview";
 
 export function CertificatesSection() {
   return (
     <section id="certificates" className="section-pad border-t border-navy/10 bg-cream">
+      <ChapterOrnament variant="compass" />
       <div className="mx-auto max-w-7xl">
         <p className="section-eyebrow">Certifications</p>
         <h2 className="mt-3 font-serif text-4xl text-navy sm:text-5xl">Recognition along the way</h2>

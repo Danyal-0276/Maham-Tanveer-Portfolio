@@ -21,9 +21,9 @@ export function HeroSection() {
       }}
       onPointerLeave={() => revealRef.current?.style.setProperty("--spot-size", "0%")}
     >
-      <Image src="/media/hero/butterfly-portrait.png" alt="Portrait of Maham Tanveer" fill preload sizes="100vw" className="object-cover object-[center_18%]" />
+      <Image data-hero-portrait src="/media/hero/butterfly-portrait.png" alt="Portrait of Maham Tanveer" fill preload sizes="100vw" className="object-cover object-[center_18%]" />
       <div ref={revealRef} aria-hidden="true" className="hero-spotlight absolute inset-0" style={{ clipPath: revealed ? "inset(0)" : undefined }}>
-        <Image src="/media/hero/butterfly-graduation.png" alt="" fill sizes="100vw" className="object-cover object-[center_18%]" />
+        <Image data-hero-portrait src="/media/hero/butterfly-graduation.png" alt="" fill sizes="100vw" className="object-cover object-[center_18%]" />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a100c] via-[#1a100c]/30 to-[#1a100c]/60" />
       <div className="relative mx-auto flex min-h-svh max-w-[100rem] flex-col justify-between px-6 pb-28 pt-8 sm:px-10 sm:pt-10">

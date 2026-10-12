@@ -1,5 +1,6 @@
 "use client";
 
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import Image from "next/image";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { education } from "@/data/biography";
@@ -7,6 +8,7 @@ import { education } from "@/data/biography";
 export function EducationSection() {
   return (
     <section id="education" className="section-pad bg-navy text-cream">
+      <ChapterOrnament variant="flower" />
       <div className="mx-auto max-w-7xl">
         <SectionShell preset="rise" splitHeading>
           <div data-motion-target>

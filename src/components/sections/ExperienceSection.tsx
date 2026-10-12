@@ -1,9 +1,11 @@
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import Image from "next/image";
 import { experience } from "@/data/biography";
 
 export function ExperienceSection() {
   return (
     <section id="experience" className="section-pad bg-cream">
+      <ChapterOrnament variant="flower" />
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <p className="section-eyebrow">Professional experience</p>

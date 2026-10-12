@@ -1,5 +1,6 @@
 "use client";
 
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import Image from "next/image";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { profile } from "@/data/biography";
@@ -7,6 +8,7 @@ import { profile } from "@/data/biography";
 export function WhoIAmSection() {
   return (
     <section id="who-i-am" className="section-pad bg-cream-deep/40">
+      <ChapterOrnament variant="orbit" />
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
         <SectionShell preset="slideLeft">
           <div

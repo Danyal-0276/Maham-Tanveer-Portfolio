@@ -1,5 +1,6 @@
 "use client";
 
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import { useState } from "react";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { places } from "@/data/biography";
@@ -10,6 +11,7 @@ export function PlacesSection() {
 
   return (
     <section id="places" className="section-pad bg-cream-deep/40">
+      <ChapterOrnament variant="orbit" />
       <div className="mx-auto max-w-6xl">
         <SectionShell preset="rise" splitHeading>
           <div data-motion-target>

@@ -1,5 +1,6 @@
 "use client";
 
+import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -63,6 +64,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="section-pad bg-navy text-cream">
+      <ChapterOrnament variant="flower" />
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
         <SectionShell preset="rise">
           <div
