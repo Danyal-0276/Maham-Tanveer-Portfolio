@@ -40,12 +40,14 @@ This is not a typical developer résumé site. It is a **single-page digital bio
 - Responsive chapter navigation with every section available on desktop and mobile
 - Hero portrait comparison with a touch-accessible graduation toggle
 - Education and current master's study grouped together
-- A dedicated UCP alumni reflection with the supplied feature image and readable transcript
+- A dedicated UCP Global Leader feature with the supplied image, scholarships, and readable reflection
 - Professional experience cards with complete responsibilities
 - A standalone Paws and Claws Animal Welfare Society chapter and vice-president portrait
 - Conference leadership, skills, and an interactive places map
 - Certificate archive with keyboard-accessible image previews
-- Gallery displayed in stable rows, with nine images initially and more on request
+- Pinterest-style masonry gallery with original image proportions, category filters, spacious/compact views, and more photographs on request
+- GSAP SplitText headings, portrait parallax, scroll-drawn ornaments, a moving story ribbon, and Flip gallery transitions
+- Reduced-motion preferences respected throughout the motion system
 - Contact via Web3Forms when configured, or a clearly labelled email-draft fallback
 - Native scrolling, no pinned sections or scroll-dependent hidden content
 - Locally bundled Manrope and Cormorant Garamond fonts for builds without Google Fonts access
@@ -116,7 +118,7 @@ On Vercel, add the same variable under **Project → Settings → Environment Va
 src/
   app/                 # App Router layout, page, styles, icons
   components/
-    layout/            # Nav, footer, smooth scroll, cursor, fauna, loading
+    layout/            # Navigation, footer, GSAP motion, chapter ornaments, story ribbon
     sections/          # Story chapters (Hero → Contact)
     ui/                # Button, Dialog
   data/biography.ts    # Profile, timeline, experience, media paths

@@ -30,10 +30,13 @@ export function GallerySection() {
     });
   }, { scope: root });
 
-  const rearrange = contextSafe((update: () => void) => {
+  function rearrange(update: () => void) {
+    contextSafe(() => {
     const items = root.current!.querySelectorAll("[data-gallery-item]");
     if (prefersReducedMotion()) { flushSync(update); return; }
+    Flip.killFlipsOf(items, true);
     gsap.killTweensOf(items);
+    gsap.set(items, { clearProps: "transform,opacity" });
     const state = Flip.getState(items);
     flushSync(update);
     Flip.from(state, {
@@ -42,7 +45,8 @@ export function GallerySection() {
       onEnter: (elements) => gsap.fromTo(elements, { opacity: 0, y: 28, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.65, stagger: 0.035, ease: "power3.out", clearProps: "transform,opacity" }),
       onComplete: () => ScrollTrigger.refresh(),
     });
-  });
+    })();
+  }
 
   return (
     <section id="gallery" ref={root} className="section-pad border-t border-navy/10 bg-cream-deep/40">

@@ -1,38 +1,47 @@
 "use client";
 
-import Image from "next/image";
-import { Menu } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
+import { useRef } from "react";
 import { navChapters } from "@/data/biography";
 import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export function SiteNav() {
+  const pendingChapter = useRef<string | null>(null);
+
   return (
-    <header className="pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-3">
-      <nav aria-label="Main navigation" className="pointer-events-auto flex max-w-full items-center gap-1 rounded-full border border-cream/20 bg-navy/95 p-1.5 text-cream shadow-lg backdrop-blur-xl">
-        <a href="#welcome" aria-label="Home" className="rounded-full p-1.5">
-          <Image src="/brand/mt-logo.png" alt="" width={28} height={28} className="h-7 w-7 object-contain" />
+    <header className="site-header">
+      <nav aria-label="Main navigation" className="site-navbar">
+        <a href="#welcome" aria-label="Maham Tanveer — Home" className="nav-wordmark">
+          <span className="nav-wordmark-name">maham<span aria-hidden="true" className="nav-wordmark-dot" /></span>
+          <span className="nav-wordmark-caption">Tanveer · A story in motion</span>
         </a>
-        <div className="hidden items-center sm:flex">
-          {[{ id: "who-i-am", label: "About" }, { id: "education", label: "Education" }, { id: "experience", label: "Experience" }, { id: "gallery", label: "Gallery" }].map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="rounded-full px-3 py-2 text-xs transition hover:bg-cream/10">{item.label}</a>
+        <div className="nav-chapter-pill">
+          {[{ id: "who-i-am", label: "About" }, { id: "education", label: "Education" }, { id: "experience", label: "Experience" }, { id: "gallery", label: "Gallery" }].map((item, index) => (
+            <a key={item.id} href={`#${item.id}`} className="nav-chapter-link"><span className="nav-chapter-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{item.label}</a>
           ))}
-        </div>
         <Dialog>
           <DialogTrigger asChild>
-            <button type="button" className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm transition hover:bg-cream/10"><Menu size={16} aria-hidden="true" />Chapters</button>
+            <button type="button" aria-label="Chapters" className="nav-chapter-link nav-menu"><Menu size={17} aria-hidden="true" /><span>Chapters</span></button>
           </DialogTrigger>
-          <DialogContent className="max-w-xl">
+          <DialogContent className="max-w-xl" onCloseAutoFocus={(event) => {
+            const id = pendingChapter.current;
+            if (!id) return;
+            event.preventDefault();
+            pendingChapter.current = null;
+            requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "start" }));
+          }}>
             <DialogTitle>Explore the story</DialogTitle>
             <nav aria-label="All chapters" className="grid gap-2 sm:grid-cols-2">
               {navChapters.map((chapter, i) => (
                 <DialogClose asChild key={chapter.id}>
-                  <a href={`#${chapter.id}`} className="flex items-center gap-3 rounded-sm border border-navy/10 px-4 py-3 text-sm text-navy transition hover:bg-cream-deep"><span className="text-xs text-ink/45">{String(i + 1).padStart(2, "0")}</span>{chapter.label}</a>
+                  <a href={`#${chapter.id}`} onClick={() => { pendingChapter.current = chapter.id; }} className="flex items-center gap-3 rounded-sm border border-navy/10 px-4 py-3 text-sm text-navy transition hover:bg-cream-deep"><span className="text-xs text-ink/45">{String(i + 1).padStart(2, "0")}</span>{chapter.label}</a>
                 </DialogClose>
               ))}
             </nav>
           </DialogContent>
         </Dialog>
-        <a href="#contact" className="rounded-full bg-gold px-4 py-2 text-sm font-medium text-navy transition hover:bg-gold/90">Contact</a>
+        </div>
+        <a href="#contact" className="nav-contact">Let’s talk <ArrowUpRight size={19} aria-hidden="true" /></a>
       </nav>
     </header>
   );
