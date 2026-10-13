@@ -6,10 +6,10 @@
 An editorial portfolio for an educator, researcher, and MSc Project Management candidate — tracing a journey from Lahore to the North East of England.
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-0F172A?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-0F172A?style=for-the-badge&logo=react&logoColor=C8A96A)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-0F172A?style=for-the-badge&logo=typescript&logoColor=C8A96A)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=C8A96A)](https://tailwindcss.com/)
-[![GSAP](https://img.shields.io/badge/GSAP-3-C8A96A?style=for-the-badge&logo=greensock&logoColor=0F172A)](https://gsap.com/)
+[![React](https://img.shields.io/badge/React-19-0F172A?style=for-the-badge&logo=react&logoColor=F5C542)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-0F172A?style=for-the-badge&logo=typescript&logoColor=F5C542)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=F5C542)](https://tailwindcss.com/)
+[![GSAP](https://img.shields.io/badge/GSAP-3-F5C542?style=for-the-badge&logo=greensock&logoColor=0F172A)](https://gsap.com/)
 
 [Visit the website](https://maham-tanveer-portfolio.vercel.app) · [LinkedIn](https://www.linkedin.com/in/mahamtanveer24) · [Get in touch](mailto:mahamt024@gmail.com)
 
@@ -28,7 +28,7 @@ This single-page digital biography brings together academic milestones, professi
 - **UCP Global Leader spotlight.** The supplied university feature, a readable reflection, and details of the International and Global Leaders scholarships.
 - **A professional timeline.** Roles flow from the earliest experience to the current chapter, with dated milestones, organization imagery, complete responsibilities, and a scroll-drawn gold line.
 - **Leadership with purpose.** A separate Paws and Claws Animal Welfare Society chapter, plus conference leadership and community contributions.
-- **An archive to explore.** A compact certificate timeline with gentle continuous movement, a pause control, enlarged previews, and bright gold flourishes. Movement pauses for interaction and respects reduced-motion preferences. The LUMS Digital Journalism feature remains separate.
+- **An archive to explore.** A full-width certificate timeline with smooth continuous animation, a pause control, enlarged previews, and bright gold flourishes. Smaller cards and a readable pace adapt the animation for phones. Movement pauses for interaction; reduced-motion users see a static grid. The LUMS Digital Journalism feature remains separate.
 - **A visual journal.** Pinterest-style masonry, category filters, spacious and compact layouts, original image proportions, and animated rearrangements.
 - **A clear way to connect.** Direct contact links and a form that uses Web3Forms when configured, with an email-draft fallback otherwise.
 
@@ -71,7 +71,7 @@ If port 3000 is in use, run `npm run dev -- --port 3001` instead.
 
 ## Configure contact
 
-Create `.env.local` in the project root to enable the Web3Forms integration:
+Copy `.env.example` to `.env.local` in the project root and add a key to enable the Web3Forms integration:
 
 ```dotenv
 NEXT_PUBLIC_WEB3FORMS_KEY=your_access_key_here
@@ -83,9 +83,9 @@ Without a key, the form displays **Open email draft** and prepares a message in 
 
 ## Customize the story
 
-- Edit `src/data/biography.ts` for profile details, education, roles, certificates, places, and gallery entries. Main navigation groups are defined in `SiteNav.tsx` and arranged in `src/app/page.tsx`.
+- Edit `src/data/biography.ts` for profile details, education, roles, certificates, and gallery entries. Main navigation groups are defined in `SiteNav.tsx` and arranged in `src/app/page.tsx`.
 - Edit `src/data/gallery-media.ts` when adding photographs to keep intrinsic dimensions and categories in sync with the gallery.
-- Store site assets in `public/media/` and brand assets in `public/brand/`.
+- Store published site assets in `public/media/`. Navigation and footer wordmarks are rendered as text; the app icons live in `src/app/`.
 - Adjust colors, responsive navigation, timeline details, and gallery layouts in `src/app/globals.css`.
 - Adjust shared animation behavior in `src/components/layout/SiteMotion.tsx`; gallery transitions live in `GallerySection.tsx`.
 - Update metadata and social sharing details in `src/app/layout.tsx` when changing the portfolio's identity.
@@ -101,12 +101,19 @@ src/
 │   ├── biography.ts        # Typed profile and chapter content
 │   └── gallery-media.ts    # Photograph dimensions and categories
 └── lib/                    # GSAP registration and shared utilities
-public/
-├── brand/                  # Brand imagery
-└── media/                  # Portraits, campuses, certificates, feature images
+public/media/               # Published portraits, campuses, certificates, features
+.env.example                # Optional contact service configuration template
 ```
 
-Original working material may be kept in the gitignored `Data/` directory. The website uses curated assets from `public/`.
+## Source archive & repository hygiene
+
+The website only loads curated assets from `public/media/`. Original CVs, photographs, certificates, and source material remain in the local `Data/` directory.
+
+- `Data/unused-site-media/` preserves unused portraits, alternate certificates, campus photographs, and the original logo for future work.
+- `Data/implementation-reference/` preserves the edited cursor experiment, companion hook, original content data, and a cleanup manifest.
+- `Data/` is ignored by Git and excluded from lint and TypeScript checks. These archives stay on this computer and are **not included in a fresh clone**; back them up separately if you need to transfer them.
+- Removed legacy components remain recoverable from Git history. Current animation code uses GSAP; Framer Motion and Lenis are no longer dependencies.
+- Dependency folders, build output, local environment files, editor caches, and test output are ignored. Commit `.env.example`, `package-lock.json`, configuration files, and bundled font licenses.
 
 ## Deployment
 

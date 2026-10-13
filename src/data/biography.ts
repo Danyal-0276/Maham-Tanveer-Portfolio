@@ -17,22 +17,6 @@ export const profile = {
   shortBio: `A literature graduate turned literacy instructor and student leader, now advancing her craft through an MSc in Project Management at the University of Sunderland.`,
 };
 
-export const navChapters = [
-  { id: "welcome", label: "Welcome" },
-  { id: "who-i-am", label: "Who I Am" },
-  { id: "education", label: "Education" },
-  { id: "masters", label: "Master’s" },
-  { id: "alumni-reflection", label: "Global Leader" },
-  { id: "experience", label: "Experience" },
-  { id: "animal-welfare", label: "Paws & Claws" },
-  { id: "leadership", label: "Leadership" },
-  { id: "skills", label: "Skills" },
-  { id: "certificates", label: "Certificates" },
-  { id: "places", label: "Places" },
-  { id: "gallery", label: "Gallery" },
-  { id: "contact", label: "Contact" },
-] as const;
-
 export const education = [
   {
     id: "sunderland",
@@ -408,28 +392,4 @@ export const skills = [
   "Risk & Quality",
   "Campaign Strategy",
   "Team Mentoring",
-];
-
-export const places = [
-  {
-    id: "lahore",
-    name: "Lahore",
-    detail: "University of Central Punjab · Teaching · Leadership · Home roots",
-    x: 72,
-    y: 58,
-  },
-  {
-    id: "sunderland",
-    name: "Sunderland",
-    detail: "Sir Tom Cowie Campus · MSc Project Management",
-    x: 28,
-    y: 28,
-  },
-  {
-    id: "newcastle",
-    name: "Newcastle upon Tyne",
-    detail: "Current home base in the North East of England",
-    x: 26,
-    y: 34,
-  },
 ];

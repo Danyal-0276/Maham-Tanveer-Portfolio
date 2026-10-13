@@ -22,6 +22,11 @@
 
 # misc
 .DS_Store
+Thumbs.db
+Desktop.ini
+.eslintcache
+*.swp
+*.swo
 *.pem
 
 # Raw source media archive (site uses curated public/media)
@@ -35,9 +40,13 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
+/.turbo/
+/test-results/
+/playwright-report/
 
 # typescript
 *.tsbuildinfo
