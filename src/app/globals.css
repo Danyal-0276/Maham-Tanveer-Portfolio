@@ -43,103 +43,6 @@ body {
   font-family: var(--font-manrope), system-ui, sans-serif;
 }
 
-html.has-custom-cursor,
-html.has-custom-cursor * {
-  cursor: none !important;
-}
-
-@keyframes butterfly-flutter {
-  0%,
-  100% {
-    transform: scaleX(1) translateY(0);
-  }
-  50% {
-    transform: scaleX(0.86) translateY(-1px);
-  }
-}
-
-/* Autonomous fauna: real wing flaps + running legs */
-.fauna-butterfly {
-  perspective: 120px;
-}
-
-.fauna-wing {
-  transform-box: fill-box;
-  transform-origin: center center;
-  transform-style: preserve-3d;
-  animation: fauna-flap 0.18s ease-in-out infinite alternate;
-}
-
-.fauna-wing-left {
-  transform-origin: 100% 50%;
-}
-
-.fauna-wing-right {
-  transform-origin: 0% 50%;
-  animation-direction: alternate-reverse;
-}
-
-@keyframes fauna-flap {
-  from {
-    transform: rotateY(8deg);
-  }
-  to {
-    transform: rotateY(62deg);
-  }
-}
-
-.fauna-runner .fauna-leg {
-  transform-box: fill-box;
-  transform-origin: top center;
-  animation: fauna-run 0.28s ease-in-out infinite;
-}
-
-.fauna-runner .fauna-leg-1 {
-  animation-delay: 0s;
-}
-.fauna-runner .fauna-leg-2 {
-  animation-delay: -0.14s;
-}
-.fauna-runner .fauna-leg-3 {
-  animation-delay: -0.07s;
-}
-.fauna-runner .fauna-leg-4 {
-  animation-delay: -0.21s;
-}
-
-@keyframes fauna-run {
-  0%,
-  100% {
-    transform: rotate(18deg) translateY(0);
-  }
-  50% {
-    transform: rotate(-22deg) translateY(-2px);
-  }
-}
-
-.fauna-tail {
-  transform-box: fill-box;
-  transform-origin: right center;
-  animation: fauna-tail 0.7s ease-in-out infinite alternate;
-}
-
-@keyframes fauna-tail {
-  from {
-    transform: rotate(-8deg);
-  }
-  to {
-    transform: rotate(12deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fauna-wing,
-  .fauna-runner .fauna-leg,
-  .fauna-tail {
-    animation: none !important;
-  }
-}
-
 ::selection {
   background: var(--gold-soft);
   color: var(--navy);
@@ -168,74 +71,6 @@ html.has-custom-cursor * {
   background: var(--gold);
 }
 
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes shimmer-light {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-.hero-reveal {
-  --x: 50;
-  --y: 42;
-  --size: 0;
-  clip-path: circle(
-    calc(var(--size) * 1%) at calc(var(--x) * 1%) calc(var(--y) * 1%)
-  );
-  will-change: clip-path;
-}
-
-.hero-glow {
-  background:
-    radial-gradient(
-      ellipse 60% 50% at 70% 40%,
-      rgba(245, 197, 66, 0.16),
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 40% 40% at 20% 80%,
-      rgba(31, 77, 58, 0.08),
-      transparent 65%
-    );
-}
-
-.particle-field {
-  background-image:
-    radial-gradient(
-      circle at 20% 30%,
-      rgba(245, 197, 66, 0.35) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 70% 60%,
-      rgba(15, 23, 42, 0.12) 0 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 40% 80%,
-      rgba(245, 197, 66, 0.25) 0 1px,
-      transparent 1.5px
-    );
-  background-size:
-    120px 120px,
-    180px 180px,
-    90px 90px;
-  animation: float-soft 12s ease-in-out infinite;
-  opacity: 0.55;
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -244,10 +79,6 @@ html.has-custom-cursor * {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  .particle-field {
-    animation: none;
   }
 }
 
@@ -370,9 +201,6 @@ section {
   letter-spacing: 0.1em;
   color: var(--ink);
   opacity: 0.65;
-}
-.nav-menu {
-  color: var(--ink);
 }
 .nav-contact {
   justify-self: end;
@@ -530,27 +358,6 @@ section {
   stroke: var(--gold);
   stroke-width: 1;
   opacity: 0.25;
-}
-.certificate-arrow {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(245, 197, 66, 0.5);
-  border-radius: 50%;
-  color: var(--navy);
-  background: var(--cream);
-  transition:
-    background 0.25s,
-    color 0.25s;
-}
-.certificate-arrow:hover:not(:disabled) {
-  background: var(--navy);
-  color: var(--cream);
-}
-.certificate-arrow:disabled {
-  opacity: 0.3;
-  cursor: default;
 }
 .certificate-motion-control {
   display: inline-flex;

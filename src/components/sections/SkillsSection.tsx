@@ -1,7 +1,6 @@
 "use client";
 
 import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
-import { SectionShell } from "@/components/layout/SectionShell";
 import { skills } from "@/data/biography";
 
 export function SkillsSection() {
@@ -9,7 +8,7 @@ export function SkillsSection() {
     <section id="skills" className="section-pad">
       <ChapterOrnament variant="flower" />
       <div className="mx-auto max-w-5xl text-center">
-        <SectionShell preset="rise" splitHeading>
+        <div>
           <div data-motion-target>
             <p className="section-eyebrow">Skills</p>
             <h2
@@ -23,13 +22,9 @@ export function SkillsSection() {
               postgraduate project study.
             </p>
           </div>
-        </SectionShell>
+        </div>
 
-        <SectionShell
-          className="mt-12"
-          staggerChildren
-          childPreset="floatIn"
-        >
+        <div className="mt-12">
           <div className="flex flex-wrap justify-center gap-3">
             {skills.map((skill) => (
               <span
@@ -41,7 +36,7 @@ export function SkillsSection() {
               </span>
             ))}
           </div>
-        </SectionShell>
+        </div>
       </div>
     </section>
   );

@@ -2,7 +2,6 @@
 
 import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import Image from "next/image";
-import { SectionShell } from "@/components/layout/SectionShell";
 import { profile } from "@/data/biography";
 
 export function WhoIAmSection() {
@@ -10,7 +9,7 @@ export function WhoIAmSection() {
     <section id="who-i-am" className="section-pad bg-cream-deep/40">
       <ChapterOrnament variant="orbit" />
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
-        <SectionShell preset="slideLeft">
+        <div>
           <div
             data-motion-target
             className="relative aspect-[4/5] overflow-hidden bg-cream-deep"
@@ -23,8 +22,8 @@ export function WhoIAmSection() {
               className="object-cover object-center"
             />
           </div>
-        </SectionShell>
-        <SectionShell preset="rise" splitHeading delay={0.08}>
+        </div>
+        <div>
           <div data-motion-target>
             <p className="section-eyebrow">Who I Am</p>
             <h2
@@ -44,7 +43,7 @@ export function WhoIAmSection() {
               Kingdom.
             </p>
           </div>
-        </SectionShell>
+        </div>
       </div>
     </section>
   );

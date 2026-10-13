@@ -2,7 +2,6 @@
 
 import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
 import Image from "next/image";
-import { SectionShell } from "@/components/layout/SectionShell";
 import { education } from "@/data/biography";
 
 export function EducationSection() {
@@ -10,7 +9,7 @@ export function EducationSection() {
     <section id="education" className="section-pad bg-navy text-cream">
       <ChapterOrnament variant="flower" />
       <div className="mx-auto max-w-7xl">
-        <SectionShell preset="rise" splitHeading>
+        <div>
           <div data-motion-target>
             <p className="section-eyebrow !text-gold">Education</p>
             <h2
@@ -24,13 +23,9 @@ export function EducationSection() {
               craft, curiosity, and professional readiness.
             </p>
           </div>
-        </SectionShell>
+        </div>
 
-        <SectionShell
-          className="mt-14"
-          staggerChildren
-          childPreset="slideLeft"
-        >
+        <div className="mt-14">
           <div className="grid gap-8 lg:grid-cols-3">
             {education.map((ed, i) => (
               <article
@@ -69,7 +64,7 @@ export function EducationSection() {
               </article>
             ))}
           </div>
-        </SectionShell>
+        </div>
       </div>
     </section>
   );

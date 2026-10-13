@@ -1,7 +1,6 @@
 "use client";
 
 import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
-import { SectionShell } from "@/components/layout/SectionShell";
 import { leadership } from "@/data/biography";
 
 export function LeadershipSection() {
@@ -20,7 +19,7 @@ export function LeadershipSection() {
         }}
       />
       <div className="relative mx-auto max-w-7xl">
-        <SectionShell preset="slideRight" splitHeading>
+        <div>
           <div data-motion-target>
             <p className="section-eyebrow">Leadership</p>
             <h2
@@ -30,17 +29,13 @@ export function LeadershipSection() {
               Service beyond the classroom
             </h2>
             <p className="mt-4 max-w-2xl text-ink/75">
-              Conference stewardship and student leadership:
-              achievements told as chapters of responsibility.
+              Conference stewardship and student leadership: achievements told
+              as chapters of responsibility.
             </p>
           </div>
-        </SectionShell>
+        </div>
 
-        <SectionShell
-          className="mt-14"
-          staggerChildren
-          childPreset="slideRight"
-        >
+        <div className="mt-14">
           <div className="grid gap-8 md:grid-cols-2">
             {leadership.map((item) => (
               <article
@@ -64,7 +59,7 @@ export function LeadershipSection() {
               </article>
             ))}
           </div>
-        </SectionShell>
+        </div>
       </div>
     </section>
   );
