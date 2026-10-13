@@ -43,8 +43,12 @@ export default function RootLayout({
       className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
-        <a href="#main-content" className="skip-link">Skip to content</a>
-        <main id="main-content" className="flex-1"><SiteMotion>{children}</SiteMotion></main>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <main id="main-content" className="flex-1">
+          <SiteMotion>{children}</SiteMotion>
+        </main>
         <SiteFooter />
         <SiteNav />
       </body>

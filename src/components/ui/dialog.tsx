@@ -18,7 +18,7 @@ const DialogOverlay = React.forwardRef<
     ref={ref}
     className={cn(
       "fixed inset-0 z-[60] bg-navy/80 backdrop-blur-md",
-      className
+      className,
     )}
     {...props}
   />
@@ -37,7 +37,7 @@ const DialogContent = React.forwardRef<
         aria-describedby={undefined}
         className={cn(
           "fixed left-1/2 top-1/2 z-[70] grid max-h-[90vh] w-[min(92vw,56rem)] -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto border border-navy/10 bg-cream p-4 pt-14 shadow-2xl sm:p-6 sm:pt-14",
-          className
+          className,
         )}
         {...props}
       >

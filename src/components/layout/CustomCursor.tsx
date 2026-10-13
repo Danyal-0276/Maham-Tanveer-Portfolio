@@ -64,7 +64,9 @@ function ButterflyIcon({ className }: { className?: string }) {
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const trailRef = useRef<HTMLDivElement>(null);
-  const enabled = useMediaQuery("(pointer: fine) and (prefers-reduced-motion: no-preference)");
+  const enabled = useMediaQuery(
+    "(pointer: fine) and (prefers-reduced-motion: no-preference)",
+  );
   const [hovering, setHovering] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -116,9 +118,9 @@ export function CustomCursor() {
       setHovering(
         Boolean(
           target.closest(
-            "a, button, [role='button'], input, textarea, label, summary"
-          )
-        )
+            "a, button, [role='button'], input, textarea, label, summary",
+          ),
+        ),
       );
     };
 
@@ -132,10 +134,7 @@ export function CustomCursor() {
       document.documentElement.classList.remove("has-custom-cursor");
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
-      document.documentElement.removeEventListener(
-        "mouseleave",
-        onLeaveWindow
-      );
+      document.documentElement.removeEventListener("mouseleave", onLeaveWindow);
     };
   }, [enabled]);
 
@@ -145,7 +144,7 @@ export function CustomCursor() {
     <div
       className={cn(
         "pointer-events-none fixed inset-0 z-[9999]",
-        visible ? "opacity-100" : "opacity-0"
+        visible ? "opacity-100" : "opacity-0",
       )}
       aria-hidden
     >
@@ -157,7 +156,7 @@ export function CustomCursor() {
         <div
           className={cn(
             "rounded-full border border-gold/45 transition-all duration-300 ease-out",
-            hovering ? "h-14 w-14 bg-gold/10" : "h-10 w-10 bg-gold/5"
+            hovering ? "h-14 w-14 bg-gold/10" : "h-10 w-10 bg-gold/5",
           )}
         />
       </div>
@@ -170,7 +169,7 @@ export function CustomCursor() {
         <div
           className={cn(
             "origin-center transition-transform duration-300 ease-out",
-            hovering ? "scale-125 -rotate-6" : "scale-100 rotate-0"
+            hovering ? "scale-125 -rotate-6" : "scale-100 rotate-0",
           )}
         >
           <div className="animate-[butterfly-flutter_2.4s_ease-in-out_infinite] text-gold">

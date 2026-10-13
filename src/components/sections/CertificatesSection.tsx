@@ -22,8 +22,8 @@ export function CertificatesSection() {
             <a href="https://ces.lums.edu.pk/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm text-navy underline underline-offset-4">About LUMS CES</a>
           </div>
         </div>
-        <CertificateTimeline />
       </div>
+      <CertificateTimeline />
     </section>
   );
 }

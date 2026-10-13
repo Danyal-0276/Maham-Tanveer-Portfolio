@@ -32,7 +32,9 @@ export default function Home() {
         <AnimalWelfareSection />
         <LeadershipSection />
       </div>
-      <div id="recognition" className="story-group"><CertificatesSection /></div>
+      <div id="recognition" className="story-group">
+        <CertificatesSection />
+      </div>
       <div id="visual-journal" className="story-group">
         <GallerySection />
       </div>
