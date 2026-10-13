@@ -1,6 +1,7 @@
 import { ChapterOrnament } from "@/components/layout/ChapterOrnament";
-import { certificates, featuredCertificate } from "@/data/biography";
+import { featuredCertificate } from "@/data/biography";
 import { ImagePreview } from "@/components/ui/ImagePreview";
+import { CertificateTimeline } from "@/components/sections/CertificateTimeline";
 
 export function CertificatesSection() {
   return (
@@ -21,16 +22,7 @@ export function CertificatesSection() {
             <a href="https://ces.lums.edu.pk/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm text-navy underline underline-offset-4">About LUMS CES</a>
           </div>
         </div>
-        <h3 className="mt-14 font-serif text-3xl text-navy">Campus & conference archive</h3>
-        <div className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {certificates.map((cert) => (
-            <div key={cert.image}>
-              <ImagePreview src={cert.image} alt={cert.title} className="aspect-[4/3]" />
-              <h4 className="mt-3 font-serif text-xl text-navy">{cert.title}</h4>
-              <p className="mt-2 text-sm leading-relaxed text-ink/60">{cert.issuer} · {cert.date}</p>
-            </div>
-          ))}
-        </div>
+        <CertificateTimeline />
       </div>
     </section>
   );

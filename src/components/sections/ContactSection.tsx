@@ -63,23 +63,25 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="section-pad bg-navy text-cream">
+    <section id="contact" className="section-pad contact-chapter bg-navy text-cream">
       <ChapterOrnament variant="flower" />
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[.85fr_1fr] lg:gap-20">
         <SectionShell preset="rise">
           <div
             data-motion-target
-            className="relative aspect-[4/5] overflow-hidden bg-navy sm:aspect-[5/4] lg:aspect-auto lg:min-h-[32rem]"
+            className="contact-portrait art-frame relative aspect-[4/5] overflow-hidden bg-navy sm:mx-auto sm:max-w-lg lg:aspect-[4/5]"
           >
             <Image
               src="/media/portrait/graduation-02.jpg"
               alt="Maham Tanveer"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 512px, 40vw"
               className="object-cover object-[center_15%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-transparent to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 px-8 pb-9 sm:px-10 sm:pb-12"><p className="text-[0.6rem] uppercase tracking-[.24em] text-gold">A new chapter awaits</p><p className="mt-3 font-serif text-4xl text-cream">Maham Tanveer</p><p className="mt-2 text-xs tracking-wide text-cream/70">Educator · Researcher · Project leader</p></div>
           </div>
+          <div className="contact-portrait-note"><span aria-hidden="true">✦</span><p>Rooted in language.<br />Moving forward with purpose.</p></div>
         </SectionShell>
 
         <SectionShell preset="slideRight" delay={0.1} splitHeading>
@@ -97,7 +99,7 @@ export function ContactSection() {
             </p>
 
             {!hasFormService && <p className="mt-4 text-sm leading-relaxed text-cream/65">This form opens a draft in your email app. Review it there and send it to complete your enquiry.</p>}
-            <form onSubmit={onSubmit} className="mt-8 space-y-4" onChange={() => { if (status !== "sending") setStatus("idle"); }}>
+            <form onSubmit={onSubmit} className="contact-form mt-8 grid gap-5 sm:grid-cols-2" onChange={() => { if (status !== "sending") setStatus("idle"); }}>
               <div className="hidden" aria-hidden="true"><label htmlFor="website">Leave this empty</label><input id="website" name="website" tabIndex={-1} autoComplete="off" /></div>
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm text-cream/85">
@@ -128,7 +130,7 @@ export function ContactSection() {
                   className="w-full border border-cream/20 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/40 outline-none focus:border-gold"
                 />
               </div>
-              <div>
+              <div className="sm:col-span-2">
                 <label htmlFor="message" className="mb-2 block text-sm text-cream/85">
                   Message
                 </label>
@@ -150,7 +152,7 @@ export function ContactSection() {
               >
                 {status === "sending" ? "Sending…" : hasFormService ? "Send message" : "Open email draft"}
               </Button>
-              <div role="status" aria-live="polite">
+              <div role="status" aria-live="polite" className="sm:col-span-2">
               {status === "draft" && <p className="text-sm text-gold">Your email app was requested. Please send the draft there. If it did not open, email {profile.email} directly.</p>}
               {status === "invalid" && <p className="text-sm text-red-300">Please enter your name, email, and a message.</p>}
               {status === "sent" && (

@@ -47,6 +47,14 @@ export function SiteMotion({ children }: { children: ReactNode }) {
       });
       gsap.fromTo("[data-hero-portrait]", { scale: 1.03, yPercent: 0 }, { scale: 1.14, yPercent: 6, ease: "none", scrollTrigger: { trigger: "#welcome", start: "top top", end: "bottom top", scrub: 1 } });
       gsap.to("[data-ribbon-track]", { xPercent: -50, duration: 40, repeat: -1, ease: "none" });
+      root.current?.querySelectorAll<SVGPathElement>("[data-certificate-swirl]").forEach((path) => {
+        const length = path.getTotalLength();
+        gsap.fromTo(path, { strokeDasharray: length, strokeDashoffset: length }, { strokeDashoffset: 0, duration: 2.4, ease: "power2.inOut", scrollTrigger: { trigger: ".certificate-archive", start: "top 85%", once: true } });
+      });
+      gsap.fromTo("[data-timeline-progress]", { scaleY: 0 }, { scaleY: 1, ease: "none", scrollTrigger: { trigger: ".experience-timeline", start: "top 65%", end: "bottom 65%", scrub: 0.6 } });
+      root.current?.querySelectorAll("[data-timeline-marker]").forEach((marker) => {
+        gsap.from(marker, { scale: 0.6, opacity: 0.3, duration: 0.65, ease: "back.out(1.5)", clearProps: "transform,opacity", scrollTrigger: { trigger: marker, start: "top 85%", once: true } });
+      });
       gsap.fromTo(progress.current, { scaleX: 0 }, { scaleX: 1, ease: "none", scrollTrigger: { trigger: root.current, start: "top top", end: "bottom bottom", scrub: 0.15 } });
       return () => splits.forEach((split) => split.revert());
     });

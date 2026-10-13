@@ -6,7 +6,6 @@ import { GallerySection } from "@/components/sections/GallerySection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { MastersSection } from "@/components/sections/MastersSection";
-import { PlacesSection } from "@/components/sections/PlacesSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { WhoIAmSection } from "@/components/sections/WhoIAmSection";
 import { AnimalWelfareSection } from "@/components/sections/AnimalWelfareSection";
@@ -19,17 +18,24 @@ export default function Home() {
     <>
       <HeroSection />
       <StoryRibbon />
-      <WhoIAmSection />
-      <EducationSection />
-      <MastersSection />
-      <AlumniSection />
-      <ExperienceSection />
-      <AnimalWelfareSection />
-      <LeadershipSection />
-      <SkillsSection />
-      <CertificatesSection />
-      <PlacesSection />
-      <GallerySection />
+      <div id="story" className="story-group">
+        <WhoIAmSection />
+        <EducationSection />
+        <MastersSection />
+        <AlumniSection />
+      </div>
+      <div id="work" className="story-group">
+        <ExperienceSection />
+        <SkillsSection />
+      </div>
+      <div id="impact" className="story-group">
+        <AnimalWelfareSection />
+        <LeadershipSection />
+      </div>
+      <div id="recognition" className="story-group"><CertificatesSection /></div>
+      <div id="visual-journal" className="story-group">
+        <GallerySection />
+      </div>
       <ContactSection />
     </>
   );

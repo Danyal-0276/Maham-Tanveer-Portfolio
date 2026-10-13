@@ -10,7 +10,7 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-accent text-cream hover:bg-accent/90 shadow-sm",
-        gold: "bg-gold text-navy hover:bg-gold/90",
+        gold: "gold-surface bg-gold text-navy hover:brightness-105",
         outline:
           "border border-navy/20 bg-transparent text-navy hover:border-gold hover:text-navy",
         ghost: "hover:bg-navy/5 text-navy",

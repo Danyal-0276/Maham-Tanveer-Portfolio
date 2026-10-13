@@ -48,7 +48,7 @@ export function LeadershipSection() {
                 data-motion-child
                 className="h-full border border-navy/10 bg-cream/80 p-6 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:border-gold/40"
               >
-                <p className="text-xs uppercase tracking-[0.16em] text-gold">
+                <p className="text-xs uppercase tracking-[0.16em] text-navy">
                   {item.dates}
                 </p>
                 <h3 className="mt-3 font-serif text-2xl text-navy">

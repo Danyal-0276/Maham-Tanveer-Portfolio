@@ -1,180 +1,139 @@
-# Maham Tanveer — Digital Biography
-
 <div align="center">
 
-**A story-driven personal portfolio** for educator, researcher, and MSc Project Management candidate *Maham Tanveer*.
+# Maham Tanveer
+### A story of language, leadership, and new chapters.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![GSAP](https://img.shields.io/badge/GSAP-3-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://gsap.com/)
-[![License](https://img.shields.io/badge/License-Private-6B7280?style=for-the-badge)](#)
+An editorial portfolio for an educator, researcher, and MSc Project Management candidate — tracing a journey from Lahore to the North East of England.
 
-[Live Demo](https://maham-tanveer-portfolio.vercel.app) · [Contact](mailto:mahamt024@gmail.com) · [LinkedIn](https://www.linkedin.com/in/mahamtanveer24)
+[![Next.js](https://img.shields.io/badge/Next.js-16-0F172A?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-0F172A?style=for-the-badge&logo=react&logoColor=C8A96A)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-0F172A?style=for-the-badge&logo=typescript&logoColor=C8A96A)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=C8A96A)](https://tailwindcss.com/)
+[![GSAP](https://img.shields.io/badge/GSAP-3-C8A96A?style=for-the-badge&logo=greensock&logoColor=0F172A)](https://gsap.com/)
+
+[Visit the website](https://maham-tanveer-portfolio.vercel.app) · [LinkedIn](https://www.linkedin.com/in/mahamtanveer24) · [Get in touch](mailto:mahamt024@gmail.com)
+
+**Cream & navy · Gold details · Expressive typography · Considered motion**
 
 </div>
 
 ---
 
-## Topics
+## The experience
 
-`portfolio` `nextjs` `typescript` `tailwindcss` `gsap` `framer-motion` `lenis` `personal-website` `education` `biography` `project-management` `academic`
+This single-page digital biography brings together academic milestones, professional experience, student leadership, and the photographs between them. Cormorant Garamond headings and Manrope body text give the story a warm, editorial character.
 
-> On GitHub: **About → Topics** and paste the tags above for discoverability.
+- **A personal introduction.** A full-screen portrait, animated typography, and an interactive graduation portrait reveal, with a button alternative for touch devices.
+- **An academic journey.** Education records and a dedicated University of Sunderland master's chapter.
+- **UCP Global Leader spotlight.** The supplied university feature, a readable reflection, and details of the International and Global Leaders scholarships.
+- **A professional timeline.** Roles flow from the earliest experience to the current chapter, with dated milestones, organization imagery, complete responsibilities, and a scroll-drawn gold line.
+- **Leadership with purpose.** A separate Paws and Claws Animal Welfare Society chapter, plus conference leadership and community contributions.
+- **An archive to explore.** A compact certificate timeline with gentle continuous movement, a pause control, enlarged previews, and bright gold flourishes. Movement pauses for interaction and respects reduced-motion preferences. The LUMS Digital Journalism feature remains separate.
+- **A visual journal.** Pinterest-style masonry, category filters, spacious and compact layouts, original image proportions, and animated rearrangements.
+- **A clear way to connect.** Direct contact links and a form that uses Web3Forms when configured, with an email-draft fallback otherwise.
 
----
+## Motion & interaction
 
-## About
+GSAP powers SplitText heading entrances, portrait parallax, rotating and drawn SVG ornaments, a moving story ribbon, timeline progress, and Flip gallery transitions. Native scrolling and anchor navigation keep the journey predictable.
 
-This is not a typical developer résumé site. It is a **single-page digital biography**: warm, academic, and narrative-led. Visitors scroll through Maham's journey from English literature and teaching in Lahore to postgraduate study in the UK.
+Five navigation groups — Story, Experience, Leadership, Certificates, and Gallery — keep every part of the biography in a clear sequence without a separate chapter menu. Contact is available from the main action button.
 
-**Visual direction:** elegant · modern · academic · inspirational  
-**Palette:** warm cream, deep navy, gold accents  
-**Typography:** Cormorant Garamond (headings) + Manrope (body)
+The interface includes reduced-motion handling, keyboard focus styles, a skip link, labelled controls, and Radix dialogs for image previews. Photographs reserve their display proportions to reduce layout movement.
 
----
+## Built with
 
-## Features
+- **Next.js 16.2 / React 19.2** — App Router with server-rendered story sections and client components for interactive features.
+- **TypeScript / Tailwind CSS 4** — typed biography data and responsive styling.
+- **GSAP / @gsap/react** — scoped animation lifecycle, ScrollTrigger, SplitText, and Flip.
+- **Radix UI / Lucide** — dialogs and interface icons.
+- **next/image / next/font/local** — optimized images and locally bundled typography.
 
-- Responsive chapter navigation with every section available on desktop and mobile
-- Hero portrait comparison with a touch-accessible graduation toggle
-- Education and current master's study grouped together
-- A dedicated UCP Global Leader feature with the supplied image, scholarships, and readable reflection
-- Professional experience cards with complete responsibilities
-- A standalone Paws and Claws Animal Welfare Society chapter and vice-president portrait
-- Conference leadership, skills, and an interactive places map
-- Certificate archive with keyboard-accessible image previews
-- Pinterest-style masonry gallery with original image proportions, category filters, spacious/compact views, and more photographs on request
-- GSAP SplitText headings, portrait parallax, scroll-drawn ornaments, a moving story ribbon, and Flip gallery transitions
-- Reduced-motion preferences respected throughout the motion system
-- Contact via Web3Forms when configured, or a clearly labelled email-draft fallback
-- Native scrolling, no pinned sections or scroll-dependent hidden content
-- Locally bundled Manrope and Cormorant Garamond fonts for builds without Google Fonts access
+## Run locally
 
----
-
-## Tech stack
-
-| Layer | Tools |
-| --- | --- |
-| Framework | [Next.js 16](https://nextjs.org/) (App Router) |
-| UI | React 19, Tailwind CSS 4 |
-| Scrolling | Native browser scrolling and accessible anchor navigation |
-| Components | Radix UI Dialog, Lucide icons |
-| Language | TypeScript |
-| Content | Typed data in `src/data/biography.ts` |
-| Assets | Curated media in `public/media/` |
-
----
-
-## Getting started
-
-### Prerequisites
-
-- Node.js **20+**
-- npm (comes with Node)
-
-### Install & run
+Use a Node.js version supported by the installed Next.js release (Node 20.9 or newer) and npm.
 
 ```bash
 git clone https://github.com/Danyal-0276/Maham-Tanveer-Portfolio.git
 cd Maham-Tanveer-Portfolio
-npm install
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-### Scripts
-
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start local development server |
-| `npm run build` | Create production build |
-| `npm run start` | Serve production build |
-| `npm run lint` | Run ESLint |
-
----
-
-## Environment
-
-Optional contact form via [Web3Forms](https://web3forms.com/):
+Open [localhost:3000](http://localhost:3000).
 
 ```bash
-# .env.local
+npm run lint   # Check source with ESLint
+npm run build  # Type-check and generate the production build
+npm run start  # Serve the production build
+```
+
+If port 3000 is in use, run `npm run dev -- --port 3001` instead.
+
+## Configure contact
+
+Create `.env.local` in the project root to enable the Web3Forms integration:
+
+```dotenv
 NEXT_PUBLIC_WEB3FORMS_KEY=your_access_key_here
 ```
 
-Without the key, the form displays **Open email draft** and opens a prefilled **mailto** draft to Maham's email. The visitor must send the draft from their own email app. It does not claim that a message was delivered.
+This is a public client-side form access key. Do not put private API secrets in `NEXT_PUBLIC_` variables.
 
-On Vercel, add the same variable under **Project → Settings → Environment Variables** (Production and Preview). Leave Build / Output / Install commands on defaults.
+Without a key, the form displays **Open email draft** and prepares a message in the visitor's own email app. The visitor reviews and sends it there; opening a draft does not deliver a message.
 
----
+## Customize the story
 
-## Project structure
+- Edit `src/data/biography.ts` for profile details, education, roles, certificates, places, and gallery entries. Main navigation groups are defined in `SiteNav.tsx` and arranged in `src/app/page.tsx`.
+- Edit `src/data/gallery-media.ts` when adding photographs to keep intrinsic dimensions and categories in sync with the gallery.
+- Store site assets in `public/media/` and brand assets in `public/brand/`.
+- Adjust colors, responsive navigation, timeline details, and gallery layouts in `src/app/globals.css`.
+- Adjust shared animation behavior in `src/components/layout/SiteMotion.tsx`; gallery transitions live in `GallerySection.tsx`.
+- Update metadata and social sharing details in `src/app/layout.tsx` when changing the portfolio's identity.
 
 ```text
 src/
-  app/                 # App Router layout, page, styles, icons
-  components/
-    layout/            # Navigation, footer, GSAP motion, chapter ornaments, story ribbon
-    sections/          # Story chapters (Hero → Contact)
-    ui/                # Button, Dialog
-  data/biography.ts    # Profile, timeline, experience, media paths
-  lib/
-    gsap.ts            # GSAP + ScrollTrigger helpers
-    utils.ts
+├── app/                    # Page, root layout, metadata, fonts, global styles
+├── components/
+│   ├── layout/             # Navbar, footer, shared motion, SVG ornaments
+│   ├── sections/           # Biography chapters, from Hero to Contact
+│   └── ui/                 # Buttons, dialogs, image previews
+├── data/
+│   ├── biography.ts        # Typed profile and chapter content
+│   └── gallery-media.ts    # Photograph dimensions and categories
+└── lib/                    # GSAP registration and shared utilities
 public/
-  brand/               # MT monogram
-  media/               # Hero, portraits, campus, certificates, experience
+├── brand/                  # Brand imagery
+└── media/                  # Portraits, campuses, certificates, feature images
 ```
 
-Raw source files may live under `Data/` locally; that folder is gitignored. The site only uses curated files in `public/`.
+Original working material may be kept in the gitignored `Data/` directory. The website uses curated assets from `public/`.
 
----
+## Deployment
 
-## Content highlights
+Import the repository into [Vercel](https://vercel.com/) and use the **Next.js** framework preset with its default build settings. Add `NEXT_PUBLIC_WEB3FORMS_KEY` to the relevant deployment environments if needed, then build and deploy.
 
-- **Education:** BS English Language & Literature (UCP) · Intermediate Fine Arts · MSc Project Management (University of Sunderland)
-- **Roles:** Literacy instructor, teaching, journalism research, event leadership, UK workplace experience
-- **Leadership:** Co-Founder & VP, Paws and Claws Animal Welfare Society
+The README describes the source in this repository; the hosted site reflects its most recent deployment.
 
----
+## GitHub topics
 
-## Deploy
+Suggested repository topics:
 
-Built for [Vercel](https://vercel.com/):
+`portfolio` `personal-website` `biography` `nextjs` `react` `typescript` `tailwindcss` `gsap` `scrolltrigger` `masonry-gallery` `responsive-design` `education` `academic-portfolio` `project-management`
 
-1. Import the GitHub repo
-2. Framework preset: **Next.js** (leave build settings on defaults)
-3. Optionally add `NEXT_PUBLIC_WEB3FORMS_KEY`
-4. Deploy
+Add these through the repository's **About → Topics** settings. Listing them here does not change GitHub's repository topics automatically.
 
-```bash
-npm run build
-```
+## Credits & usage
 
-Live site: [maham-tanveer-portfolio.vercel.app](https://maham-tanveer-portfolio.vercel.app)
+A personal portfolio project for **Maham Tanveer**. Photos, certificates, logos, and feature material belong to their respective owners. No general reuse license for the project or personal media is granted here.
 
----
-
-## License & credits
-
-Private portfolio project for **Maham Tanveer**.
-
-Photos, certificates, and brand assets belong to their respective owners and are used here for this personal biography site.
+Manrope and Cormorant Garamond Latin font files are bundled in `src/app/fonts/`. Their SIL Open Font License files are included alongside them.
 
 ---
 
 <div align="center">
 
-Made with care for a story worth reading.
+**Maham Tanveer** · Educator · Researcher · Emerging project leader
 
-**Maham Tanveer** · Newcastle upon Tyne · [mahamt024@gmail.com](mailto:mahamt024@gmail.com)
+[Explore the story](https://maham-tanveer-portfolio.vercel.app/#story)
 
 </div>
-
-## Bundled fonts
-
-The Latin subsets of Manrope and Cormorant Garamond are stored under `src/app/fonts/` and loaded through `next/font/local`. They preserve the original typography without a Google Fonts request during the build. Their SIL Open Font License files are included in the same directory.

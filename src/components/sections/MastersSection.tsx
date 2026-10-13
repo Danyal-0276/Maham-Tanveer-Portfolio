@@ -8,7 +8,7 @@ export function MastersSection() {
       <ChapterOrnament variant="compass" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="section-eyebrow">The next chapter · Currently pursuing</p>
+          <p className="section-eyebrow !text-gold">The next chapter · Currently pursuing</p>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl">{masters.title}</h2>
           <p className="mt-4 text-xl text-cream/85">{masters.institution}</p>
           <p className="mt-2 text-sm leading-relaxed text-cream/65">{masters.campus}</p>

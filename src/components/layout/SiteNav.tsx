@@ -1,13 +1,14 @@
-"use client";
+import { ArrowUpRight } from "lucide-react";
 
-import { ArrowUpRight, Menu } from "lucide-react";
-import { useRef } from "react";
-import { navChapters } from "@/data/biography";
-import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+const sections = [
+  { id: "story", label: "Story" },
+  { id: "work", label: "Experience" },
+  { id: "impact", label: "Leadership" },
+  { id: "recognition", label: "Certificates" },
+  { id: "visual-journal", label: "Gallery" },
+];
 
 export function SiteNav() {
-  const pendingChapter = useRef<string | null>(null);
-
   return (
     <header className="site-header">
       <nav aria-label="Main navigation" className="site-navbar">
@@ -16,30 +17,9 @@ export function SiteNav() {
           <span className="nav-wordmark-caption">Tanveer · A story in motion</span>
         </a>
         <div className="nav-chapter-pill">
-          {[{ id: "who-i-am", label: "About" }, { id: "education", label: "Education" }, { id: "experience", label: "Experience" }, { id: "gallery", label: "Gallery" }].map((item, index) => (
-            <a key={item.id} href={`#${item.id}`} className="nav-chapter-link"><span className="nav-chapter-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{item.label}</a>
+          {sections.map((section, index) => (
+            <a key={section.id} href={`#${section.id}`} className="nav-chapter-link"><span className="nav-chapter-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{section.label}</a>
           ))}
-        <Dialog>
-          <DialogTrigger asChild>
-            <button type="button" aria-label="Chapters" className="nav-chapter-link nav-menu"><Menu size={17} aria-hidden="true" /><span>Chapters</span></button>
-          </DialogTrigger>
-          <DialogContent className="max-w-xl" onCloseAutoFocus={(event) => {
-            const id = pendingChapter.current;
-            if (!id) return;
-            event.preventDefault();
-            pendingChapter.current = null;
-            requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "start" }));
-          }}>
-            <DialogTitle>Explore the story</DialogTitle>
-            <nav aria-label="All chapters" className="grid gap-2 sm:grid-cols-2">
-              {navChapters.map((chapter, i) => (
-                <DialogClose asChild key={chapter.id}>
-                  <a href={`#${chapter.id}`} onClick={() => { pendingChapter.current = chapter.id; }} className="flex items-center gap-3 rounded-sm border border-navy/10 px-4 py-3 text-sm text-navy transition hover:bg-cream-deep"><span className="text-xs text-ink/45">{String(i + 1).padStart(2, "0")}</span>{chapter.label}</a>
-                </DialogClose>
-              ))}
-            </nav>
-          </DialogContent>
-        </Dialog>
         </div>
         <a href="#contact" className="nav-contact">Let’s talk <ArrowUpRight size={19} aria-hidden="true" /></a>
       </nav>
